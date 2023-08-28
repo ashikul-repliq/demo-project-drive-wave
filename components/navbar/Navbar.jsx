@@ -11,7 +11,7 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-      <div className="relative flex items-center justify-between">
+      <div className="relative flex items-center justify-between z-30">
         <div className="flex items-center">
           <Link
             href="/"
@@ -40,14 +40,14 @@ const Navbar = () => {
           </Link>
           <ul className="flex items-center hidden space-x-8 lg:flex">
             <li>
-              <a
+              <Link
                 href="/inventory"
                 aria-label="Our product"
                 title="Our product"
                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
                 Inventory 
-              </a>
+              </Link>
             </li>
             <li>
               <a
@@ -95,7 +95,7 @@ const Navbar = () => {
           <li>
             <a
               href="/"
-              className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+              className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-red-700 hover:bg-black  focus:shadow-outline focus:outline-none"
               aria-label="Sign up"
               title="Sign up"
             >
@@ -126,8 +126,8 @@ const Navbar = () => {
             </svg>
           </button>
           {isMenuOpen && (
-            <div className="absolute top-0 left-0 w-full">
-              <div className="p-5 bg-white border rounded shadow-sm">
+            <div className="absolute top-0 left-0 w-full ">
+              <div className="p-5 bg-white border rounded shadow-sm ">
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <a
@@ -172,17 +172,17 @@ const Navbar = () => {
                     </button>
                   </div>
                 </div>
-                <nav>
+                <nav >
                   <ul className="space-y-4">
                     <li>
-                      <a
+                      <Link
                         href="/inventory"
                         aria-label="Our product"
                         title="Our product"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                          Inventory
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <a
@@ -227,7 +227,7 @@ const Navbar = () => {
                     <li>
                       <a
                         href="/"
-                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-red-700 hover:bg-black focus:shadow-outline focus:outline-none"
                         aria-label="Sign up"
                         title="Sign up"
                       >
