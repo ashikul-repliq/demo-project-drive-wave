@@ -11,7 +11,7 @@ const page = () => {
           priority={true}
           height={500}
           width={1500}
-          className="object-cover object-center"
+          className="object-cover object-center  h-40 md:h-60 xl:h-96 "
           src="https://images.unsplash.com/photo-1605816988069-b11383b50717?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1488&q=80"
           alt="car"
         />

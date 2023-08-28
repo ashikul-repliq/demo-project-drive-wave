@@ -41,7 +41,7 @@ const Banner = () => {
             priority={true}
             height={500}
             width={500}
-            className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
+            className="object-cover w-full h-56  shadow-lg sm:h-96"
             src="https://images.unsplash.com/photo-1614200179396-2bdb77ebf81b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80"
             alt=""
           />

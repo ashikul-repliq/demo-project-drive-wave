@@ -1,5 +1,6 @@
 'use client'
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -19,26 +20,21 @@ const Navbar = () => {
             title="Company"
             className="inline-flex items-center mr-8"
           >
-            <svg
-              className="w-8 text-deep-purple-accent-400"
-              viewBox="0 0 24 24"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeMiterlimit="10"
-              stroke="currentColor"
-              fill="none"
-            >
-              <rect x="3" y="1" width="7" height="12" />
-              <rect x="3" y="17" width="7" height="6" />
-              <rect x="14" y="1" width="7" height="6" />
-              <rect x="14" y="11" width="7" height="12" />
-            </svg>
+          
+            <Image 
+            width={50}
+            height={50}
+            className="object-cover object-center w-10 h-10 rounded-full"   
+            
+            src='https://images.unsplash.com/photo-1618846042125-0a64df35d3d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1486&q=80'
+            alt='car-tire'
+            
+            />
             <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
              Drive-<span className=" text-red-600">w</span>ave
             </span>
           </Link>
-          <ul className="flex items-center hidden space-x-8 lg:flex">
+          <ul className="xl:flex items-center hidden space-x-8 lg:flex">
             <li>
               <Link
                 href="/inventory"
@@ -81,7 +77,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <ul className="flex items-center hidden space-x-8 lg:flex">
+        <ul className="xl:flex items-center hidden space-x-8 lg:flex">
           <li>
             <a
               href="/"
@@ -130,31 +126,26 @@ const Navbar = () => {
               <div className="p-5 bg-white border rounded shadow-sm ">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <a
+                    <Link
                       href="/"
                       aria-label="Company"
                       title="Company"
                       className="inline-flex items-center"
                     >
-                      <svg
-                        className="w-8 text-deep-purple-accent-400"
-                        viewBox="0 0 24 24"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeMiterlimit="10"
-                        stroke="currentColor"
-                        fill="none"
-                      >
-                        <rect x="3" y="1" width="7" height="12" />
-                        <rect x="3" y="17" width="7" height="6" />
-                        <rect x="14" y="1" width="7" height="6" />
-                        <rect x="14" y="11" width="7" height="12" />
-                      </svg>
+                      
+                        <Image 
+            width={50}
+            height={50}
+            className="object-cover object-center w-10 h-10 rounded-full"   
+            
+            src='https://images.unsplash.com/photo-1618846042125-0a64df35d3d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1486&q=80'
+            alt='car-tire'
+            
+            />
                       <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
              Drive-<span className=" text-red-600">w</span>ave
             </span>
-                    </a>
+                    </Link>
                   </div>
                   <div>
                     <button
