@@ -35,22 +35,22 @@ const page = () => {
           <Form>
             <div className="mb-4">
               <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
-              <Field type="text" id="name" name="name" className="mt-1 p-2 w-full border rounded-md" />
+              <Field type="text" id="name" name="name" placeholder = 'Name' className="mt-1 p-2 w-full border rounded-md" />
               <ErrorMessage name="name" component="div" className="text-red-500 text-sm mt-1" />
             </div>
             <div className="mb-4">
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-              <Field type="email" id="email" name="email" className="mt-1 p-2 w-full border rounded-md" />
+              <Field type="email" id="email" name="email" placeholder = 'Email'   className="mt-1 p-2 w-full border rounded-md" />
               <ErrorMessage name="email" component="div" className="text-red-500 text-sm mt-1" />
             </div>
             <div className="mb-4">
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
-              <Field type="password" id="password" name="password" className="mt-1 p-2 w-full border rounded-md" />
+              <label htmlFor="password"  className="block text-sm font-medium text-gray-700">Password</label>
+              <Field type="password" placeholder = 'Password' id="password" name="password" className="mt-1 p-2 w-full border rounded-md" />
               <ErrorMessage name="password" component="div" className="text-red-500 text-sm mt-1" />
             </div>
             <div className="mb-4">
               <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">Confirm Password</label>
-              <Field type="password" id="confirmPassword" name="confirmPassword" className="mt-1 p-2 w-full border rounded-md" />
+              <Field type="password" placeholder = ' Confirm Password' id="confirmPassword" name="confirmPassword" className="mt-1 p-2 w-full border rounded-md" />
               <ErrorMessage name="confirmPassword" component="div" className="text-red-500 text-sm mt-1" />
             </div>
            

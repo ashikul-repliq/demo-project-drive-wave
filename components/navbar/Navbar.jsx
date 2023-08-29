@@ -68,7 +68,7 @@ const Navbar = () => {
         <ul className="xl:flex items-center hidden space-x-8 lg:flex">
           <li>
             <Link
-              href="/"
+              href="/sign-in"
               aria-label="Sign in"
               title="Sign in"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -170,7 +170,7 @@ const Navbar = () => {
                     </li>
                     <li>
                       <Link
-                        href="/"
+                        href="/sign-in"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400"
                       >
                         Sign in
