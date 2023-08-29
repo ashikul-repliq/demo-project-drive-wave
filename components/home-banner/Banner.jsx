@@ -27,7 +27,7 @@ const Banner = () => {
           <div className="flex flex-col items-center md:flex-row">
             <Link 
             href="/inventory"
-            className="inline-flex  bg-red-600 items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto md:mr-4 md:mb-0  hover:bg-black focus:shadow-outline focus:outline-none  "
+            className="inline-flex  bg-red-600 items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md md:w-auto md:mr-4 md:mb-0  hover:bg-black  "
             >
               <span className="mr-3 ">Start Shopping</span>
               <BiRightArrowAlt/>
