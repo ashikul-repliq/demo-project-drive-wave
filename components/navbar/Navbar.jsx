@@ -78,7 +78,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="/"
+              href="/sign-up"
               className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-red-700 hover:bg-black "
             >
               Sign up
@@ -178,7 +178,7 @@ const Navbar = () => {
                     </li>
                     <li>
                       <Link
-                        href="/"
+                        href="/sign-up"
                         className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-red-700 hover:bg-black "
                       >
                         Sign up
