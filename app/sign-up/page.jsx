@@ -3,6 +3,7 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import Link from "next/link";
 
 const page = () => {
   const initialValues = {
@@ -36,7 +37,7 @@ const page = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded shadow-md w-full md:w-1/2 lg:w-1/3">
+      <div className="bg-white p-8 rounded-tl-3xl rounded-br-3xl shadow-md w-full md:w-1/2 lg:w-1/3 ">
         <h2 className="text-2xl font-bold flex items-center justify-center mb-4">
           Sign Up
         </h2>
@@ -133,6 +134,8 @@ const page = () => {
             >
               Sign Up
             </button>
+
+            <p className="mt-3 text-black  ">Already have an account! <Link href='/sign-in'  className="text-red-600 underline hover:text-purple-600" >Sign-In now</Link> </p>
           </Form>
         </Formik>
       </div>
