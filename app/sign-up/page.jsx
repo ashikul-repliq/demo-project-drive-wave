@@ -4,8 +4,10 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-const page = () => {
+const SignUpPage = () => {
+  const router = useRouter();
   const initialValues = {
     name: "",
     email: "",
@@ -30,9 +32,30 @@ const page = () => {
   });
 
   const handleSubmit = (values, { resetForm }) => {
-    // You can handle the form submission here
-    console.log(values);
+    //  handle the form submission 
+   
+  
+
+//sign-up using local storage
+
+const users = JSON.parse(localStorage.getItem('users')) || [];
+if (users) {
+  const isEmailExist = users.find(({email}) => email === values.email)
+  if (isEmailExist) {
+    alert('Email already exist')
+    return
+  }
+}
+
+
+
+ users.push(values) 
+
+localStorage.setItem('current-user',JSON.stringify(values))
+localStorage.setItem('users',JSON.stringify(users))
+
     resetForm();
+    router.push('/sign-in')
   };
 
   return (
@@ -143,4 +166,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default SignUpPage;

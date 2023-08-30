@@ -5,9 +5,23 @@ import Link from "next/link";
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdOutlineClose } from "react-icons/md";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  //  const current_user = JSON.parse(localStorage.getItem('current-user'))
+  // console.log(current_user);
+ const [isMenuOpen, setIsMenuOpen] = useState(false);
+ const router = useRouter()
+//signOut function
+const signOut = () => {
+
+  localStorage.removeItem('current-user')
+  router.push('/sign-in')
+
+}
+
+
   return (
     <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div className="relative flex items-center justify-between z-30">
@@ -66,6 +80,47 @@ const Navbar = () => {
           </ul>
         </div>
         <ul className="xl:flex items-center hidden space-x-8 lg:flex">
+
+          {/* {current_user ? (  <> <li>
+            <Link
+              href="/sign-in"
+              aria-label="Sign in"
+              title="Sign in"
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+            >
+              {current_user.name}
+            </Link>
+          </li> 
+          <li>
+            <button
+              onClick={signOut}
+              className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-red-700 hover:bg-black "
+            >
+              Sign out
+            </button>
+          </li>
+          
+          </> ) : ( 
+          <> <li>
+            <Link
+              href="/sign-in"
+              aria-label="Sign in"
+              title="Sign in"
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+            >
+              Sign in
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/sign-up"
+              className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-red-700 hover:bg-black "
+            >
+              Sign up
+            </Link>
+          </li> </> ) } */}
+
+          {/* ********start */}
           <li>
             <Link
               href="/sign-in"
@@ -84,6 +139,9 @@ const Navbar = () => {
               Sign up
             </Link>
           </li>
+
+          {/* end */}
+          
         </ul>
         <div className="lg:hidden">
           <button

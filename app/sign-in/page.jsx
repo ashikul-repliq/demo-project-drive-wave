@@ -3,26 +3,45 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import Link from "next/link";
-// import * as Yup from 'yup';
+import * as Yup from 'yup';
+import { useRouter } from "next/navigation";
 
-const page = () => {
+const SignInPage = () => {
+
+  const router = useRouter();
   const initialValues = {
     email: "",
     password: "",
   };
 
-  //   const validationSchema = Yup.object({
-  //     name: Yup.string().required('Name is Required'),
-  //     email: Yup.string().email('Invalid email format').required('Email is Required'),
-  //     password: Yup.string().required('Password is Required').min(6, 'Password must be at least 6 characters'),
-  //     confirmPassword: Yup.string()
-  //       .oneOf([Yup.ref('password'), null], 'Confirm password  must match Passwords ')
-  //       .required('confirm password is Required'),
-  //   });
+    const validationSchema = Yup.object({
+     
+      email: Yup.string().email('Invalid email format').required('Email is Required'),
+      password: Yup.string().required('Password is Required')
+      
+    });
 
   const handleSubmit = (values, { resetForm }) => {
-    // You can handle the form submission here
+    // handle the form submission
     console.log(values);
+
+     //sign-in using local storage
+
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      if (users) {
+        const isEmailExist = users.find(({email}) => email === values.email)
+        const isPasswordExist = users.find(({password}) => password === values.password)
+        if (!isEmailExist) {
+          alert('Email does not exist')
+          return
+        }
+        if (!isPasswordExist) {
+          alert('Password does not match')
+          return
+        }
+      }
+     
+    router.push('/')
     resetForm();
   };
 
@@ -32,7 +51,9 @@ const page = () => {
         <h2 className="text-2xl font-bold flex items-center justify-center mb-4">
           Sign In
         </h2>
-        <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+        <Formik initialValues={initialValues}
+         validationSchema={validationSchema}
+         onSubmit={handleSubmit}>
           <Form>
             <div className="mb-4">
               <label
@@ -89,4 +110,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default SignInPage;
