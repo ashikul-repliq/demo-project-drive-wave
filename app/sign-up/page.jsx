@@ -5,8 +5,10 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import GetCurrentUser from "@/utils/getCurrentUser";
 
 const SignUpPage = () => {
+  const { refetch } = GetCurrentUser();
   const router = useRouter();
   const initialValues = {
     name: "",
@@ -32,30 +34,27 @@ const SignUpPage = () => {
   });
 
   const handleSubmit = (values, { resetForm }) => {
-    //  handle the form submission 
-   
-  
+    //  handle the form submission
 
-//sign-up using local storage
+    //sign-up using local storage
 
-const users = JSON.parse(localStorage.getItem('users')) || [];
-if (users) {
-  const isEmailExist = users.find(({email}) => email === values.email)
-  if (isEmailExist) {
-    alert('Email already exist')
-    return
-  }
-}
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    if (users) {
+      const isEmailExist = users.find(({ email }) => email === values.email);
+      if (isEmailExist) {
+        alert("Email already exist");
+        return;
+      }
+    }
 
+    users.push(values);
 
-
- users.push(values) 
-
-localStorage.setItem('current-user',JSON.stringify(values))
-localStorage.setItem('users',JSON.stringify(users))
+    localStorage.setItem("current-user", JSON.stringify(values));
+    localStorage.setItem("users", JSON.stringify(users));
 
     resetForm();
-    router.push('/sign-in')
+    refetch();
+    router.push("/");
   };
 
   return (
@@ -158,7 +157,15 @@ localStorage.setItem('users',JSON.stringify(users))
               Sign Up
             </button>
 
-            <p className="mt-3 text-black  ">Already have an account! <Link href='/sign-in'  className="text-red-600 underline hover:text-purple-600" >Sign-In now</Link> </p>
+            <p className="mt-3 text-black  ">
+              Already have an account!{" "}
+              <Link
+                href="/sign-in"
+                className="text-red-600 underline hover:text-purple-600"
+              >
+                Sign-In now
+              </Link>{" "}
+            </p>
           </Form>
         </Formik>
       </div>
