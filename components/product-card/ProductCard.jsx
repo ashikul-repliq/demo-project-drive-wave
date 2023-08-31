@@ -12,8 +12,7 @@ const ProductCard = ({ product }) => {
     Rating,
     Price,
     Transmission,
-    category,
-    image,
+    Img,
     Mileage,
     Model,
     Hybrid,
@@ -34,7 +33,7 @@ const ProductCard = ({ product }) => {
             height={500}
             width={180}
             className="object-cover object-center  h-full w-full rounded-lg hover:scale-105 transition duration-300 ease-in-out "
-            src="https://images.unsplash.com/photo-1605816988069-b11383b50717?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1488&q=80"
+            src={Img}
             alt="car"
           />
           <div className="absolute  top-4 left-2">
