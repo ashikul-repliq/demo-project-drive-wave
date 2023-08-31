@@ -4,6 +4,7 @@ import { AiFillCar, AiFillStar, AiOutlineEye } from "react-icons/ai";
 import { BiCableCar } from "react-icons/bi";
 import { GiRoad } from "react-icons/gi";
 import { BsFillFuelPumpFill } from "react-icons/bs";
+import Link from "next/link";
 
 const ProductCard = ({ product }) => {
   const {
@@ -16,6 +17,7 @@ const ProductCard = ({ product }) => {
     Mileage,
     Model,
     Hybrid,
+     id
   } = product || {};
 
   const starIcons = [];
@@ -74,12 +76,12 @@ const ProductCard = ({ product }) => {
         <div className="flex justify-between items-center mt-2">
           <h1 className="text-red-600 text-xl font-bold"> {Price}</h1>
 
-          <button className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-black transition duration-300 ease-in-out">
+          <Link href={`/inventory/${id}`} className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-black transition duration-300 ease-in-out">
             <h1 className="flex items-center gap-2 font-bold">
               {" "}
               <AiOutlineEye></AiOutlineEye> Details
             </h1>
-          </button>
+          </Link>
         </div>
       </div>
     </>
