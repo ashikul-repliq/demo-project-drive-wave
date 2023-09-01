@@ -13,8 +13,6 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
 
-
-
   //signOut function
   const signOut = () => {
     localStorage.removeItem("current-user");
@@ -47,6 +45,14 @@ const Navbar = () => {
                 Inventory
               </Link>
             </li>
+            {data && <li>
+              <Link
+                href="/favourite"
+                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              >
+                Favourite
+              </Link>
+            </li> }
             <li>
               <a
                 href="/"
@@ -179,6 +185,14 @@ const Navbar = () => {
                         Inventory
                       </Link>
                     </li>
+                    {data && <li>
+              <Link
+                href="/favourite"
+                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              >
+                Favourite
+              </Link>
+            </li> }
                     <li>
                       <a
                         href="/"
@@ -209,22 +223,51 @@ const Navbar = () => {
                         About us
                       </a>
                     </li>
-                    <li>
-                      <Link
-                        href="/sign-in"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400"
-                      >
-                        Sign in
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/sign-up"
-                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-red-700 hover:bg-black "
-                      >
-                        Sign up
-                      </Link>
-                    </li>
+                    {data ? (
+                      <>
+                        {" "}
+                        <li>
+                          <Link
+                            href="/sign-in"
+                            aria-label="Sign in"
+                            title="Sign in"
+                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          >
+                            {data.name}
+                          </Link>
+                        </li>
+                        <li>
+                          <button
+                            onClick={signOut}
+                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-red-700 hover:bg-black "
+                          >
+                            Sign out
+                          </button>
+                        </li>
+                      </>
+                    ) : (
+                      <>
+                        {" "}
+                        <li>
+                          <Link
+                            href="/sign-in"
+                            aria-label="Sign in"
+                            title="Sign in"
+                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          >
+                            Sign in
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            href="/sign-up"
+                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-red-700 hover:bg-black "
+                          >
+                            Sign up
+                          </Link>
+                        </li>{" "}
+                      </>
+                    )}
                   </ul>
                 </nav>
               </div>
