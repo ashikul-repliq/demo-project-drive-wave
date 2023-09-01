@@ -21,7 +21,7 @@ const InventoryPage = () => {
   };
 
   // use tanstake query to get all products
-  const { data, isLoading, isError, error } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["products"],
     queryFn: fetchProducts,
   });
