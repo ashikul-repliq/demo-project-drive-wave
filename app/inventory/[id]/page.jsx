@@ -8,6 +8,7 @@ import { BiCard, BiColorFill, BiCylinder, BiTime } from 'react-icons/bi';
 import { BsFillFuelPumpFill } from 'react-icons/bs';
 import { GiRoad } from 'react-icons/gi';
 import { SiAirplayaudio, SiUnrealengine } from "react-icons/si";
+import {  IoCheckmarkDoneCircleOutline } from "react-icons/io5";
 
 const SingleProductPage = ({params}) => {
 
@@ -33,7 +34,7 @@ const SingleProductPage = ({params}) => {
   });
 
   console.log(data);
-  const {Img,Condition,Name,Views,ListedOn,Mileage,Transmission,Year,FuelType,Color,Doors,Cylinders,VIN,EngineSize} = data || {};
+  const {Img,Condition,Name,Views,ListedOn,Mileage,Transmission,Year,FuelType,Color,Doors,Cylinders,VIN,EngineSize,Details,CarFeatures,VehicleHistory} = data || {};
 
 
     return (
@@ -165,6 +166,46 @@ const SingleProductPage = ({params}) => {
             </div>
            </div>
             {/* end of key information */}
+            {/* discription */}
+            <div className='bg-white p-6 rounded-lg shadow-lg col-span-2  mx-5  md:ml-20 mb-10 flex  flex-col items-start'>
+
+            <h1 className="pb-3 font-bold text-xl md:text-2xl  text-black ">Discription</h1>
+
+            <p className='text-gray-400'>{Details} </p>
+
+           
+            <h1 className="py-3 font-bold text-xl md:text-2xl  text-black "> Car Features</h1>
+
+            <ul>
+              {CarFeatures.map((feature,index) => (
+                <li  key={index}>
+                  <div className='flex items-center gap-2'>
+                     <IoCheckmarkDoneCircleOutline className='text-red-700' ></IoCheckmarkDoneCircleOutline>
+                     <span className='text-gray-400' >  {feature}</span>
+                 
+                  </div>
+                  
+                 </li>
+              ))}
+            </ul>
+            <h1 className="py-3 font-bold text-xl md:text-2xl  text-black "> Vehicle History</h1>
+
+            <ul>
+              {VehicleHistory.map((feature,index) => (
+                <li  key={index}>
+                  <div className='flex items-center gap-2'>
+                     <IoCheckmarkDoneCircleOutline className='text-red-700' ></IoCheckmarkDoneCircleOutline>
+                     <span className='text-gray-400' >  {feature}</span>
+                 
+                  </div>
+                  
+                 </li>
+              ))}
+            </ul>
+
+
+            </div>
+            {/* end of discription */}
             
         </div>
 
