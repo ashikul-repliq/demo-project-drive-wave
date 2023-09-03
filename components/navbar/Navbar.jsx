@@ -15,6 +15,7 @@ const Navbar = () => {
 
   //signOut function
   const signOut = () => {
+   setIsMenuOpen(false);
     localStorage.removeItem("current-user");
     refetch();
     router.push("/sign-in");
@@ -151,6 +152,7 @@ const Navbar = () => {
                       aria-label="Company"
                       title="Company"
                       className="inline-flex items-center"
+                      onClick={() => setIsMenuOpen(false)}
                     >
                       <Image
                         width={50}
@@ -181,6 +183,7 @@ const Navbar = () => {
                       <Link
                         href="/inventory"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        onClick={() => setIsMenuOpen(false)}
                       >
                         Inventory
                       </Link>
@@ -189,6 +192,7 @@ const Navbar = () => {
               <Link
                 href="/favourite"
                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Favourite
               </Link>
@@ -254,6 +258,7 @@ const Navbar = () => {
                             aria-label="Sign in"
                             title="Sign in"
                             className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            onClick={() => setIsMenuOpen(false)}
                           >
                             Sign in
                           </Link>
@@ -262,6 +267,7 @@ const Navbar = () => {
                           <Link
                             href="/sign-up"
                             className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-red-700 hover:bg-black "
+                            onClick={() => setIsMenuOpen(false)}
                           >
                             Sign up
                           </Link>

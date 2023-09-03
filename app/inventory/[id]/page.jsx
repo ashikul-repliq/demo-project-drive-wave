@@ -37,7 +37,7 @@ const SingleProductPage = ({ params }) => {
     queryFn: fetchProducts,
   });
 
-  console.log(data);
+  // console.log(data);
   const {
     Img,
     Condition,
