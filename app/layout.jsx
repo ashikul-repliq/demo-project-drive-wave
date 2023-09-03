@@ -3,6 +3,7 @@ import Navbar from "@/components/navbar/Navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Footer } from "@/components/footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
         <div className="mx-auto container">
           <Navbar></Navbar>
        {children}
+       <Footer></Footer>
         </div>
         </QueryClientProvider>
       </body>
