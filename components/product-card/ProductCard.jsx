@@ -34,7 +34,7 @@ const ProductCard = ({ product }) => {
             priority={true}
             height={500}
             width={180}
-            className="object-cover object-center  h-full w-full rounded-lg hover:scale-105 transition duration-300 ease-in-out "
+            className="object-cover  aspect-[2/1]   w-full rounded-lg hover:scale-105 transition duration-300 ease-in-out "
             src={Img}
             alt="car"
           />

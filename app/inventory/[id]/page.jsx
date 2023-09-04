@@ -5,6 +5,7 @@ import Image from "next/image";
 import React from "react";
 import {
   AiFillCar,
+  AiFillHeart,
   AiOutlineCar,
   AiOutlineClockCircle,
   AiOutlineEye,
@@ -15,6 +16,7 @@ import { BsFillFuelPumpFill } from "react-icons/bs";
 import { GiRoad } from "react-icons/gi";
 import { SiAirplayaudio, SiUnrealengine } from "react-icons/si";
 import { IoCheckmarkDoneCircleOutline } from "react-icons/io5";
+import GetCurrentUser from "@/utils/getCurrentUser";
 
 const SingleProductPage = ({ params }) => {
   // fetch function
@@ -59,6 +61,19 @@ const SingleProductPage = ({ params }) => {
     Reviews,
   } = data || {};
 
+  //  get loggin user info 
+  const { data:user, refetch } = GetCurrentUser();
+  // console.log(user)
+
+  // add to favourite function
+
+    //  const addToFavourite = async () => {
+    // try {
+    //   const response = await axios.post("https://64f038f18a8b66ecf7794bb9.mockapi.io/favourite" , {
+    //     ...data, 
+
+    // }
+
   return (
     <>
       {/* // single product  */}
@@ -81,10 +96,15 @@ const SingleProductPage = ({ params }) => {
                     Used
                   </h1>
                 )}
+                <div className="flex  ">
+                  <h1 className="pb-2 font-bold text-xl md:text-3xl  text-black ">
+                    {Name}{" "}
+                  </h1>
 
-                <h1 className="pb-2 font-bold text-xl md:text-3xl  text-black ">
-                  {Name}{" "}
-                </h1>
+                  <button className="text-white bg-purple-600 rounded-lg py-2 px-4 mb-2 ml-8 xl:ml-96 flex items-center gap-2">
+                    Fav <AiFillHeart></AiFillHeart>
+                  </button>
+                </div>
 
                 <div className="flex items-center mb-4">
                   <AiOutlineClockCircle fill="red"></AiOutlineClockCircle>
