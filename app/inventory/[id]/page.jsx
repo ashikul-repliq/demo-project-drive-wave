@@ -62,44 +62,48 @@ const SingleProductPage = ({ params }) => {
     Reviews,
   } = data || {};
 
-  //  get loggin user info 
-  const { data:user } = GetCurrentUser();
- 
+  //  get loggin user info
+  const { data: user } = GetCurrentUser();
+  
 
   // get favdata from mock api
-  const  {data:favData, refetch} = GetFavData()
-    console.log(favData)
+  const { data: favData, refetch } = GetFavData();
+ 
+
+  // filter fav data by user email
+  const filterFavData = favData?.filter((item) => item.email === user?.email);
 
   // add to favourite function
 
-     const addToFavourite = async () => {
-    try { 
-      const dataExist = favData.find((item) => item.Name === data.Name) 
-        // const addedData = response.data
-        // refetch()
-       
-        if(dataExist){
-          alert("already added to favourite")
-           return 
-        }
-        else {
-          const response = await axios.post("https://64f038f18a8b66ecf7794bb9.mockapi.io/favourite" , {
-            ...data, ...user } ); 
-          alert("added to favourite successfully")
+  const addToFavourite = async () => {
+    try {
+      const dataExist = filterFavData.find((item) => {
+        return item.Name === data.Name;
+      });
+     
 
-        }
+      
+      // console.log(dataExist)
+      if (dataExist ) {
+        alert("already added to favourite");
+        return;
+      } else {
+        const response = await axios.post(
+          "https://64f038f18a8b66ecf7794bb9.mockapi.io/favourite",
+          {
+            ...data,
+            ...user,
+          }
+        );
+        alert("added to favourite successfully");
+      }
       // console.log(addedData);
-
     } catch (error) {
       console.error("Error fetching products:", error);
       return []; // Return an empty array in case of an error
     }
   };
 
-
-
-
-   
   return (
     <>
       {/* // single product  */}
@@ -127,7 +131,10 @@ const SingleProductPage = ({ params }) => {
                     {Name}{" "}
                   </h1>
 
-                  <button onClick={addToFavourite} className="text-white bg-purple-600 rounded-lg py-2 px-4 mb-2 ml-8 xl:ml-96 flex items-center gap-2">
+                  <button
+                    onClick={addToFavourite}
+                    className="text-white bg-purple-600 rounded-lg py-2 px-4 mb-2 ml-8 xl:ml-96 flex items-center gap-2"
+                  >
                     Fav <AiFillHeart></AiFillHeart>
                   </button>
                 </div>

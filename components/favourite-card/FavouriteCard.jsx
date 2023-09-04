@@ -33,7 +33,7 @@ const deleteFav = async (id) => {
     <div className="w-2/3 p-4 md:p-4">
         <h1 className="text-xl font-bold text-gray-800 dark:text-white">{Name}</h1>
 
-        <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{Details.slice(0,80)}</p>
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{Details.slice(0,80)}...</p>
 
         <div className="flex mt-2 item-center">
         {starIcons}
