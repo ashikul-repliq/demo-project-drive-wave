@@ -77,7 +77,12 @@ const SingleProductPage = ({ params }) => {
 
   const addToFavourite = async () => {
     try {
-      const dataExist = filterFavData.find((item) => {
+      if(!user?.email){
+        alert("please login first")
+        return  
+      }  
+      else {
+        const dataExist = filterFavData.find((item) => {
         return item.Name === data.Name;
       });
      
@@ -97,6 +102,8 @@ const SingleProductPage = ({ params }) => {
         );
         alert("added to favourite successfully");
       }
+      }
+      
       // console.log(addedData);
     } catch (error) {
       console.error("Error fetching products:", error);
