@@ -29,12 +29,12 @@ const page = () => {
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center gap-4  min-h-screen p-10 bg-gray-100">
-          {filterFavData?.map((product) => (
+          {filterFavData.length? filterFavData?.map((product) => (
     <FavouriteCard key={product.id} refetch={refetch} product={product}>
               {" "}
               {product.id}{" "}
             </FavouriteCard>
-          ))}
+          )) : <h1 className="text-3xl font-bold text-gray-400">No favourite item</h1>}
         </div>
       )}
 
