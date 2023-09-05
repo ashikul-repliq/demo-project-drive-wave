@@ -8,6 +8,7 @@ import { MdOutlineClose } from "react-icons/md";
 import { useRouter } from "next/navigation";
 import GetCurrentUser from "@/utils/getCurrentUser";
 import { RiAccountCircleFill } from "react-icons/ri";
+import { toast } from "react-hot-toast";
 
 const Navbar = () => {
   const { data, refetch } = GetCurrentUser();
@@ -16,10 +17,11 @@ const Navbar = () => {
 
   //signOut function
   const signOut = () => {
-   setIsMenuOpen(false);
+    setIsMenuOpen(false);
     localStorage.removeItem("current-user");
     refetch();
-    router.push("/sign-in");
+    toast.success("sign-out successful!");
+     router.push("/sign-in");
   };
 
   return (
@@ -47,15 +49,16 @@ const Navbar = () => {
                 Inventory
               </Link>
             </li>
-            {data && <li>
-              <Link
-                href="/favourite"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-              >
-                Favourite
-              </Link>
-            </li> }
-           
+            {data && (
+              <li>
+                <Link
+                  href="/favourite"
+                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                >
+                  Favourite
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
         <ul className="xl:flex items-center hidden space-x-8 lg:flex">
@@ -63,10 +66,8 @@ const Navbar = () => {
             <>
               {" "}
               <li>
-                <span
-                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200  text-4xl hover:text-deep-purple-accent-400"
-                >
-                 <RiAccountCircleFill></RiAccountCircleFill>
+                <span className="font-medium tracking-wide text-gray-700 transition-colors duration-200  text-4xl hover:text-deep-purple-accent-400">
+                  <RiAccountCircleFill></RiAccountCircleFill>
                 </span>
               </li>
               <li>
@@ -167,16 +168,18 @@ const Navbar = () => {
                         Inventory
                       </Link>
                     </li>
-                    {data && <li>
-              <Link
-                href="/favourite"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Favourite
-              </Link>
-            </li> }
-                    
+                    {data && (
+                      <li>
+                        <Link
+                          href="/favourite"
+                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Favourite
+                        </Link>
+                      </li>
+                    )}
+
                     {data ? (
                       <>
                         {" "}
@@ -190,14 +193,11 @@ const Navbar = () => {
                           >
                             <div className="flex item-center justify-center  gap-2">
                               <span className="text-2xl">
-
                                 <RiAccountCircleFill></RiAccountCircleFill>
                               </span>
 
-                              
                               {data.name}
                             </div>
-                            
                           </Link>
                         </li>
                         <li>

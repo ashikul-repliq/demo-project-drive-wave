@@ -34,7 +34,7 @@ const PopularProduct = () => {
       {/* popular product  */}
 
       <h1 className=" pt-8 text-center text-black font-bold md:text-5xl text-2xl bg-gray-100 ">
-        Popular products
+        Popular Cars
       </h1>
 
       {/* products list  */}

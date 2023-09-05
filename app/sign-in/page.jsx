@@ -6,6 +6,7 @@ import Link from "next/link";
 import * as Yup from "yup";
 import { useRouter } from "next/navigation";
 import GetCurrentUser from "@/utils/getCurrentUser";
+import { toast } from "react-hot-toast";
 
 const SignInPage = () => {
   const { refetch } = GetCurrentUser();
@@ -35,17 +36,18 @@ const SignInPage = () => {
         ({ password }) => password === values.password
       );
       if (!isEmailExist) {
-        alert("Email does not exist");
+        toast.error("Email does not exist");
         return;
       }
       if (!isPasswordExist) {
-        alert("Password does not match");
+        toast.error("Password does not match");
         return;
       }
       localStorage.setItem("current-user", JSON.stringify(isEmailExist));
     }
-
+toast.success('Sign-In Successful!');
     router.push("/");
+    
     refetch();
     resetForm();
   };

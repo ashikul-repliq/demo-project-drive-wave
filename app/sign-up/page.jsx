@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import GetCurrentUser from "@/utils/getCurrentUser";
+import { toast } from "react-hot-toast";
 
 const SignUpPage = () => {
   const { refetch } = GetCurrentUser();
@@ -42,7 +43,7 @@ const SignUpPage = () => {
     if (users) {
       const isEmailExist = users.find(({ email }) => email === values.email);
       if (isEmailExist) {
-        alert("Email already exist");
+        toast.error("Email already exist");
         return;
       }
     }
@@ -54,6 +55,7 @@ const SignUpPage = () => {
 
     resetForm();
     refetch();
+    toast.success('Account Successfully created!');
     router.push("/");
   };
 
