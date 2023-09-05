@@ -43,8 +43,9 @@ const PopularProduct = () => {
         <div className="text-center  text-3xl min-h-screen flex items-center justify-center  bg-gray-100">
           loading...
         </div>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-4  p-10  bg-gray-100">
+      ) : (  <div className="bg-gray-100    ">
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-4  p-10 container mx-auto  ">
           {popularProducts?.map((product) => (
             <ProductCard key={product.id} product={product}>
               {" "}
@@ -52,6 +53,8 @@ const PopularProduct = () => {
             </ProductCard>
           ))}
         </div>
+        </div>
+        
       )}
 
       {/* end of product  */}

@@ -4,7 +4,8 @@ import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineTwitter } from "react-i
 
 export const Footer = () => {
     return (
-      <div className="px-4 pt-16 mx-auto  md:px-24 lg:px-8 bg-black">
+      <div className="bg-black">
+      <div className="px-4 pt-16 mx-auto  md:px-24 lg:px-8  container mx-auto">
         <div className="grid gap-16 row-gap-10 mb-8 lg:grid-cols-6">
           <div className="md:max-w-md lg:col-span-2">
           <Link href="/" className="inline-flex items-center mr-8">
@@ -181,6 +182,7 @@ export const Footer = () => {
           </p>
           
         </div>
+      </div>
       </div>
     );
   };

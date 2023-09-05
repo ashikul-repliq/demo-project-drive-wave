@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
       <Toaster />
       <QueryClientProvider client={queryClient}>
-        <div className="container mx-auto">
+        <div className="">
           <Navbar></Navbar>
        {children}
        <Footer></Footer>
