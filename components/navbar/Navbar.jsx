@@ -7,6 +7,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { MdOutlineClose } from "react-icons/md";
 import { useRouter } from "next/navigation";
 import GetCurrentUser from "@/utils/getCurrentUser";
+import { RiAccountCircleFill } from "react-icons/ri";
 
 const Navbar = () => {
   const { data, refetch } = GetCurrentUser();
@@ -54,42 +55,20 @@ const Navbar = () => {
                 Favourite
               </Link>
             </li> }
-            <li>
-              <a
-                href="/"
-                aria-label="Our product"
-                title="Our product"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-              >
-                Features
-              </a>
-            </li>
-            <li>
-              <a
-                href="/"
-                aria-label="Product pricing"
-                title="Product pricing"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-              >
-                Pricing
-              </a>
-            </li>
-            <li>
-              <a
-                href="/"
-                aria-label="About us"
-                title="About us"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-              >
-                About us
-              </a>
-            </li>
+           
           </ul>
         </div>
         <ul className="xl:flex items-center hidden space-x-8 lg:flex">
           {data ? (
             <>
               {" "}
+              <li>
+                <span
+                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200  text-4xl hover:text-deep-purple-accent-400"
+                >
+                 <RiAccountCircleFill></RiAccountCircleFill>
+                </span>
+              </li>
               <li>
                 <Link
                   href="/sign-in"
@@ -197,36 +176,7 @@ const Navbar = () => {
                 Favourite
               </Link>
             </li> }
-                    <li>
-                      <a
-                        href="/"
-                        aria-label="Our product"
-                        title="Our product"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Features
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/"
-                        aria-label="Product pricing"
-                        title="Product pricing"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Pricing
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/"
-                        aria-label="About us"
-                        title="About us"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        About us
-                      </a>
-                    </li>
+                    
                     {data ? (
                       <>
                         {" "}
@@ -235,9 +185,19 @@ const Navbar = () => {
                             href="/sign-in"
                             aria-label="Sign in"
                             title="Sign in"
-                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400 
+                            flex item-center "
                           >
-                            {data.name}
+                            <div className="flex item-center justify-center  gap-2">
+                              <span className="text-2xl">
+
+                                <RiAccountCircleFill></RiAccountCircleFill>
+                              </span>
+
+                              
+                              {data.name}
+                            </div>
+                            
                           </Link>
                         </li>
                         <li>
