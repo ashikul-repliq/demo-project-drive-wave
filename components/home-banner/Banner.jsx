@@ -6,13 +6,13 @@ import { BiRightArrowAlt } from "react-icons/bi";
 const Banner = () => {
     return (
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-      <div className="flex flex-col items-center justify-between lg:flex-row">
+      <div className="flex flex-col-reverse items-center justify-between lg:flex-row">
         <div className="mb-10 lg:max-w-lg lg:pr-5 lg:mb-0">
           <div className="max-w-xl mb-6">
             <div>
              
             </div>
-            <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+            <h2 className="max-w-lg my-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
               Welcome to Drive-Wave 
               <br className="hidden md:block" />
              Best place to buy{' '}
@@ -40,9 +40,9 @@ const Banner = () => {
           <Image
             priority={true}
             height={500}
-            width={500}
-            className="object-cover w-full h-56  shadow-lg sm:h-96"
-            src="https://images.unsplash.com/photo-1614200179396-2bdb77ebf81b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80"
+            width={1500}
+            className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
+            src="https://images.unsplash.com/photo-1613835842551-894cdd236160?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
             alt=""
           />
          
@@ -51,5 +51,6 @@ const Banner = () => {
     </div>
     );
 };
+// https://images.unsplash.com/photo-1614200179396-2bdb77ebf81b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80
 
 export default Banner;
