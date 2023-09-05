@@ -23,6 +23,8 @@ const Navbar = () => {
     toast.success("sign-out successful!");
      router.push("/sign-in");
   };
+//admin
+const admin = data?.email ==='admin@gmail.com' 
 
   return (
     <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -56,6 +58,16 @@ const Navbar = () => {
                   className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                 >
                   Favourite
+                </Link>
+              </li>
+            )}
+            {admin &&  (
+              <li>
+                <Link
+                  href="/add-car"
+                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                >
+                 Add a car
                 </Link>
               </li>
             )}
