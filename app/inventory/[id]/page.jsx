@@ -55,6 +55,7 @@ const SingleProductPage = ({ params }) => {
     Name,
     Views,
     ListedOn,
+    createdAt,
     Mileage,
     Transmission,
     Year,
@@ -165,7 +166,7 @@ const SingleProductPage = ({ params }) => {
                 <div className="flex items-center mb-4">
                   <AiOutlineClockCircle fill="red"></AiOutlineClockCircle>
                   <span className="text-gray-400 mx-2 ">
-                    ListedOn: {ListedOn}
+                    ListedOn: {ListedOn || createdAt}
                   </span>
                   <AiOutlineEye fill="red"></AiOutlineEye>
                   <span className="text-gray-400 ml-2">Views: {Views}</span>
