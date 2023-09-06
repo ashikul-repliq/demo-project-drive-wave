@@ -12,7 +12,7 @@ const SignInPage = () => {
   const { refetch } = GetCurrentUser();
   const router = useRouter();
   const redirect =  localStorage.getItem('redirect') || '/';
-  console.log(redirect);
+ 
   const initialValues = {
     email: "",
     password: "",
