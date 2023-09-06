@@ -9,10 +9,10 @@ const CarForm = ({ onSubmit }) => {
     initialValues: {
       Name: '',
       Img: '',
-      price: '',
+      Price: '',
       Model: '',
       Rating: '',
-      condition: '',
+      Condition: '',
       Transmission: '',
       Mileage: '',
       FuelType: '',
@@ -21,10 +21,10 @@ const CarForm = ({ onSubmit }) => {
     validationSchema: Yup.object({
       Name: Yup.string().required('Name is required'),
       Img: Yup.string().url('Must be a valid URL'),
-    //   price: Yup.number().required('Price is required').positive('Price must be positive'),
+    //   Price: Yup.number().required('Price is required').positive('Price must be positive'),
       Model: Yup.string().required('Model is required'),
       Rating: Yup.number().required('Rating is required').min(0).max(5),
-      condition: Yup.string().required('Condition is required'),
+      Condition: Yup.string().required('Condition is required'),
       Transmission: Yup.string().required('Transmission is required'),
       Mileage: Yup.string().required('Mileage is required'),
       FuelType: Yup.string().required('Fuel Type is required'),
@@ -72,17 +72,17 @@ const CarForm = ({ onSubmit }) => {
 
        <div className='flex  gap-4'>
 <div className="mb-4">
-          <label htmlFor="price" className="block text-gray-700   font-bold">Price</label>
+          <label htmlFor="Price" className="block text-gray-700   font-bold">Price</label>
           <input
             type="text"
-            id="price"
-            name="price"
+            id="Price"
+            name="Price"
             placeholder='$28500'
             className="form-input w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-400"
-            {...formik.getFieldProps('price')}
+            {...formik.getFieldProps('Price')}
           />
-          {formik.touched.price && formik.errors.price && (
-            <div className="text-red-600 mt-2">{formik.errors.price}</div>
+          {formik.touched.Price && formik.errors.Price && (
+            <div className="text-red-600 mt-2">{formik.errors.Price}</div>
           )}
         </div>
 
@@ -122,17 +122,17 @@ const CarForm = ({ onSubmit }) => {
         </div>
 
  <div className="mb-4">
-          <label htmlFor="condition" className="block text-gray-700   font-bold">Condition</label>
+          <label htmlFor="Condition" className="block text-gray-700   font-bold">Condition</label>
           <input
             type="text"
-            id="condition"
-            name="condition"
+            id="Condition"
+            name="Condition"
             placeholder='Used/Brand New'
             className="form-input w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-400"
-            {...formik.getFieldProps('condition')}
+            {...formik.getFieldProps('Condition')}
           />
-          {formik.touched.condition && formik.errors.condition && (
-            <div className="text-red-600 mt-2">{formik.errors.condition}</div>
+          {formik.touched.Condition && formik.errors.Condition && (
+            <div className="text-red-600 mt-2">{formik.errors.Condition}</div>
           )}
         </div>
   </div>
