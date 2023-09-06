@@ -12,15 +12,20 @@ const AddCar = () => {
       .then((response) => {
         console.log("Car added successfully:", response.data);
         toast.success("Car added successfully");
+        
       })
       .catch((error) => {
         console.error("Error adding car:", error);
       });
   };
   return (
-    <div className="mx-auto container bg-gray-100 py-20">
+    <div className="bg-gray-100">
+      <div className="mx-auto container  py-20">
       <CarForm onSubmit={handleFormSubmit} />
     </div>
+    </div>
+
+    
   );
 };
 

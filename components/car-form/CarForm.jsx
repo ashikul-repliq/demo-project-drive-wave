@@ -30,17 +30,18 @@ const CarForm = ({ onSubmit }) => {
       FuelType: Yup.string().required('Fuel Type is required'),
       Details: Yup.string().required('Details are required'),
     }),
-    onSubmit: (values) => {
+    onSubmit: (values , { resetForm }) => {
       onSubmit(values);
+      resetForm();
     },
   });
 
   return (
-    <form onSubmit={formik.handleSubmit} className="w-full max-w-md mx-auto bg-white p-8 rounded-lg md:w-1/2 lg:w-1/3 shadow-lg">
-      <h2 className="text-2xl font-semibold mb-4 text-gray-800">Add a Car</h2>
+    <form onSubmit={formik.handleSubmit} className="w-full max-w-md  lg:max-w-2xl mx-auto bg-white p-8 rounded-lg md:w-1/2 lg:w-1/2 shadow-lg">
+      <h2 className="text-2xl font-semibold mb-4 text-gray-800  text-center">Add a Car</h2>
       <div className="grid grid-cols-1 gap-6">
         <div className="mb-4">
-          <label htmlFor="Name" className="block text-gray-700">Name</label>
+          <label htmlFor="Name" className="block text-gray-700   font-bold ">Name</label>
           <input
             type="text"
             id="Name"
@@ -55,7 +56,7 @@ const CarForm = ({ onSubmit }) => {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="Img" className="block text-gray-700">Image URL</label>
+          <label htmlFor="Img" className="block text-gray-700   font-bold">Image URL</label>
           <input
             type="text"
             id="Img"
@@ -71,7 +72,7 @@ const CarForm = ({ onSubmit }) => {
 
        <div className='flex  gap-4'>
 <div className="mb-4">
-          <label htmlFor="price" className="block text-gray-700">Price</label>
+          <label htmlFor="price" className="block text-gray-700   font-bold">Price</label>
           <input
             type="text"
             id="price"
@@ -86,7 +87,7 @@ const CarForm = ({ onSubmit }) => {
         </div>
 
  <div className="mb-4">
-          <label htmlFor="Model" className="block text-gray-700">Model</label>
+          <label htmlFor="Model" className="block text-gray-700   font-bold">Model</label>
           <input
             type="text"
             id="Model"
@@ -106,7 +107,7 @@ const CarForm = ({ onSubmit }) => {
   <div className='flex gap-4'>
  
  <div className="mb-4">
-          <label htmlFor="Rating" className="block text-gray-700">Rating</label>
+          <label htmlFor="Rating" className="block text-gray-700   font-bold">Rating</label>
           <input
             type="text"
             id="Rating"
@@ -121,7 +122,7 @@ const CarForm = ({ onSubmit }) => {
         </div>
 
  <div className="mb-4">
-          <label htmlFor="condition" className="block text-gray-700">Condition</label>
+          <label htmlFor="condition" className="block text-gray-700   font-bold">Condition</label>
           <input
             type="text"
             id="condition"
@@ -140,7 +141,7 @@ const CarForm = ({ onSubmit }) => {
    <div className='flex gap-4'>
 
     <div className="mb-4">
-          <label htmlFor="Transmission" className="block text-gray-700">Transmission</label>
+          <label htmlFor="Transmission" className="block text-gray-700   font-bold">Transmission</label>
           <input
             type="text"
             id="Transmission"
@@ -156,7 +157,7 @@ const CarForm = ({ onSubmit }) => {
 
 
  <div className="mb-4">
-          <label htmlFor="Mileage" className="block text-gray-700">Mileage</label>
+          <label htmlFor="Mileage" className="block text-gray-700   font-bold">Mileage</label>
           <input
             type="text"
             id="Mileage"
@@ -179,7 +180,7 @@ const CarForm = ({ onSubmit }) => {
        
 
         <div className="mb-4">
-          <label htmlFor="FuelType" className="block text-gray-700">Fuel Type</label>
+          <label htmlFor="FuelType" className="block text-gray-700   font-bold">Fuel Type</label>
           <input
             type="text"
             id="FuelType"
@@ -194,7 +195,7 @@ const CarForm = ({ onSubmit }) => {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="Details" className="block text-gray-700">Details</label>
+          <label htmlFor="Details" className="block text-gray-700   font-bold">Details</label>
           <textarea
             id="Details"
             name="Details"
@@ -209,8 +210,8 @@ const CarForm = ({ onSubmit }) => {
         </div>
 
         {/* Submit button */}
-        <div className="flex justify-end">
-          <button type="submit" className="btn bg-red-500 hover:bg-black text-white font-semibold py-2 px-4 rounded-lg">
+        <div className="">
+          <button type="submit" className="w-full bg-red-600 hover:bg-black text-white font-semibold py-2 px-4 rounded-lg">
             Add Car
           </button>
         </div>
