@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import { toast } from 'react-hot-toast';
 import { AiFillStar } from 'react-icons/ai';
 
 const FavouriteCard = ({product,refetch}) => {
@@ -15,7 +16,8 @@ const deleteFav = async (id) => {
             const response = await axios.delete(`https://64f038f18a8b66ecf7794bb9.mockapi.io/favourite/${id}`)
             console.log(response)
             refetch()
-            alert("successfully deleted")
+            
+            toast.success("successfully deleted")
         }  
         catch (error) {
             console.log(error)

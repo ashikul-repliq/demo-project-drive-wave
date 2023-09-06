@@ -18,8 +18,15 @@ import { SiAirplayaudio, SiUnrealengine } from "react-icons/si";
 import { IoCheckmarkDoneCircleOutline } from "react-icons/io5";
 import GetCurrentUser from "@/utils/getCurrentUser";
 import GetFavData from "@/utils/getFavData";
+import { toast } from "react-hot-toast";
+import { usePathname } from "next/navigation";
+
+
 
 const SingleProductPage = ({ params }) => {
+
+    const pathname = usePathname()
+    console.log(pathname)
   // fetch function
 
   const fetchProducts = async () => {
@@ -72,17 +79,20 @@ const SingleProductPage = ({ params }) => {
 
   // filter fav data by user email
   const filterFavData = favData?.filter((item) => item.email === user?.email);
+  
 
   // add to favourite function
 
   const addToFavourite = async () => {
     try {
       if(!user?.email){
-        alert("please login first")
+       
+        toast.error("please login first")
+        localStorage.setItem("redirect",pathname)
         return  
       }  
       else {
-        const dataExist = filterFavData.find((item) => {
+        const dataExist = filterFavData?.find((item) => {
         return item.Name === data.Name;
       });
      
@@ -90,7 +100,8 @@ const SingleProductPage = ({ params }) => {
       
       // console.log(dataExist)
       if (dataExist ) {
-        alert("already added to favourite");
+       
+        toast.error("already added to favourite");
         return;
       } else {
         const response = await axios.post(
@@ -100,7 +111,10 @@ const SingleProductPage = ({ params }) => {
             ...user,
           }
         );
-        alert("added to favourite successfully");
+         
+        refetch();
+        toast.success("added to favourite successfully");
+       
       }
       }
       
