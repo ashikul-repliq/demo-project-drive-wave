@@ -21,13 +21,10 @@ import GetFavData from "@/utils/getFavData";
 import { toast } from "react-hot-toast";
 import { usePathname, useRouter } from "next/navigation";
 
-
-
 const SingleProductPage = ({ params }) => {
-
-    const pathname = usePathname()
-    const router = useRouter()
-    console.log(pathname)
+  const pathname = usePathname();
+  const router = useRouter();
+  console.log(pathname);
   // fetch function
 
   const fetchProducts = async () => {
@@ -73,54 +70,48 @@ const SingleProductPage = ({ params }) => {
 
   //  get loggin user info
   const { data: user } = GetCurrentUser();
-  
 
   // get favdata from mock api
   const { data: favData, refetch } = GetFavData();
- 
 
   // filter fav data by user email
   const filterFavData = favData?.filter((item) => item.email === user?.email);
-  
-
+//check data exit in the fav list 
+const dataExist = filterFavData?.find((item) => {
+  return item.Name === data?.Name;
+});
   // add to favourite function
 
   const addToFavourite = async () => {
     try {
-      if(!user?.email){
-       
-        toast.error("please login first")
-        localStorage.setItem("redirect",pathname)
-        router.push("/sign-in") 
-        return  
-      }  
-      else {
-        const dataExist = filterFavData?.find((item) => {
-        return item.Name === data.Name;
-      });
-     
-
-      
-      // console.log(dataExist)
-      if (dataExist ) {
-       
-        toast.error("already added to favourite");
+      if (!user?.email) {
+        toast.error("please login first");
+        localStorage.setItem("redirect", pathname);
+        router.push("/sign-in");
         return;
       } else {
-        const response = await axios.post(
-          "https://64f038f18a8b66ecf7794bb9.mockapi.io/favourite",
-          {
-            ...data,
-            ...user,
-          }
-        );
-         
-        refetch();
-        toast.success("added to favourite successfully");
-       
+        const dataExist = filterFavData?.find((item) => {
+          return item.Name === data.Name;
+        });
+
+        // console.log(dataExist)
+        if (dataExist) {
+          toast.error("already added to favourite");
+          return;
+        } else {
+          const response = await axios.post(
+            "https://64f038f18a8b66ecf7794bb9.mockapi.io/favourite",
+            {
+              ...data,
+              ...user,
+            }
+          );
+
+          refetch();
+          toast.success("added to favourite successfully");
+        }
       }
-      }
-      
+
       // console.log(addedData);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -139,27 +130,18 @@ const SingleProductPage = ({ params }) => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
             <div className="col-span-2">
-              <div className=" bg-white p-6 rounded-lg shadow-lg col-span-2 mx-5 mt-20 md:ml-20 mb-5 flex  flex-col items-start">
-                {Condition === "Brand New" ? (
-                  <h1 className="text-white bg-green-600 rounded-lg py-2 px-4 mb-2 inline">
-                    {" "}
-                    New
-                  </h1>
-                ) : (
-                  <h1 className="text-white bg-red-600 rounded-lg py-2 px-4 mb-2 inline">
-                    Used
-                  </h1>
-                )}
-                <div className="flex  ">
+              <div className=" bg-white p-6 rounded-lg shadow-lg col-span-2 mx-5 mt-20 md:ml-20 mb-5 ">
+             
+                <div className="flex justify-between ">
                   <h1 className="pb-2 font-bold text-xl md:text-3xl  text-black ">
                     {Name}{" "}
                   </h1>
 
                   <button
                     onClick={addToFavourite}
-                    className="text-white bg-purple-600 rounded-lg py-2 px-4 mb-2 ml-8 xl:ml-96 flex items-center gap-2"
+                    className={ ` rounded-lg py-2 px-4 mb-2  flex items-center gap-2 text-4xl ${dataExist ? 'text-red-600 ' : 'text-black '} `}
                   >
-                    Fav <AiFillHeart></AiFillHeart>
+                    <AiFillHeart></AiFillHeart>
                   </button>
                 </div>
 
@@ -171,14 +153,29 @@ const SingleProductPage = ({ params }) => {
                   <AiOutlineEye fill="red"></AiOutlineEye>
                   <span className="text-gray-400 ml-2">Views: {Views}</span>
                 </div>
-                <Image
-                  priority={true}
-                  height={300}
-                  width={1800}
-                  className=" object-cover object-center  h-full w-full rounded-lg "
-                  src={Img}
-                  alt="car"
-                />
+
+                <div className="relative ">
+                  <Image
+                    priority={true}
+                    height={300}
+                    width={1800}
+                    className=" object-cover object-center  h-full w-full rounded-lg "
+                    src={Img}
+                    alt="car"
+                  />
+                  <div className="absolute  top-4 left-2">
+                    {Condition === "Brand New" ? (
+                      <h1 className="text-white bg-green-600 rounded p-2 inline">
+                        {" "}
+                        New
+                      </h1>
+                    ) : (
+                      <h1 className="text-white bg-red-600 rounded p-2 inline">
+                        Used
+                      </h1>
+                    )}
+                  </div>
+                </div>
               </div>
 
               {/* key information */}
@@ -322,7 +319,7 @@ const SingleProductPage = ({ params }) => {
 
             <div className="bg-white p-6 rounded-lg shadow-lg   mx-5 md:mt-20 md:mr-10 mb-10 flex  flex-col items-start  md:h-[45%]">
               <h1 className="pb-3 font-bold text-xl md:text-2xl  text-black ">
-                Reviews({Reviews?.length || '0' })
+                Reviews({Reviews?.length || "0"})
               </h1>
               <div className="grid grid-cols-1  gap-4">
                 {Reviews?.map((review, index) => (
