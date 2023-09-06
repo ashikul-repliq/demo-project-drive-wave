@@ -19,13 +19,14 @@ import { IoCheckmarkDoneCircleOutline } from "react-icons/io5";
 import GetCurrentUser from "@/utils/getCurrentUser";
 import GetFavData from "@/utils/getFavData";
 import { toast } from "react-hot-toast";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 
 
 const SingleProductPage = ({ params }) => {
 
     const pathname = usePathname()
+    const router = useRouter()
     console.log(pathname)
   // fetch function
 
@@ -89,6 +90,7 @@ const SingleProductPage = ({ params }) => {
        
         toast.error("please login first")
         localStorage.setItem("redirect",pathname)
+        router.push("/sign-in") 
         return  
       }  
       else {
