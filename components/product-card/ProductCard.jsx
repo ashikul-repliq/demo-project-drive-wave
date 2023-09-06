@@ -5,8 +5,13 @@ import { BiCableCar } from "react-icons/bi";
 import { GiRoad } from "react-icons/gi";
 import { BsFillFuelPumpFill } from "react-icons/bs";
 import Link from "next/link";
+import { TiDeleteOutline } from "react-icons/ti";
+import GetCurrentUser from "@/utils/getCurrentUser";
+import axios from "axios";
 
-const ProductCard = ({ product }) => {
+import { toast } from "react-hot-toast";
+
+const ProductCard = ({ product, refetch }) => {
   const {
     Name,
     Condition,
@@ -17,17 +22,44 @@ const ProductCard = ({ product }) => {
     Mileage,
     Model,
     Hybrid,
-     id
+    id,
   } = product || {};
 
   const starIcons = [];
   for (let i = 0; i < Rating; i++) {
     starIcons.push(<AiFillStar key={i} fill="brown" />);
   }
+  const { data } = GetCurrentUser();
+  //admin
+  const admin = data?.email === "admin@gmail.com";
+
+  //delete product
+  const deleteProduct = async () => {
+    axios
+      .delete(`https://64f038f18a8b66ecf7794bb9.mockapi.io/products/${id}`)
+      .then((response) => {
+        console.log("Car deleted successfully:", response.data);
+        toast.success("Car deleted successfully");
+        refetch();
+      })
+      .catch((error) => {
+        console.error("Error deleting car:", error);
+      });
+
+    refetch();
+  };
 
   return (
-    <>
+    <div className="relative">
       {/* // product card */}
+      {admin && (
+        <div
+          onClick={deleteProduct}
+          className="absolute text-4xl text-red-600 hover:text-black -top-4 -left-2"
+        >
+          <TiDeleteOutline></TiDeleteOutline>
+        </div>
+      )}
       <div className=" bg-white p-4 rounded-lg shadow-lg  h-min ">
         <div className="relative ">
           <Image
@@ -76,7 +108,10 @@ const ProductCard = ({ product }) => {
         <div className="flex justify-between items-center mt-2">
           <h1 className="text-red-600 text-xl font-bold"> {Price}</h1>
 
-          <Link href={`/inventory/${id}`} className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-black transition duration-300 ease-in-out">
+          <Link
+            href={`/inventory/${id}`}
+            className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-black transition duration-300 ease-in-out"
+          >
             <h1 className="flex items-center gap-2 font-bold">
               {" "}
               <AiOutlineEye></AiOutlineEye> Details
@@ -84,7 +119,7 @@ const ProductCard = ({ product }) => {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

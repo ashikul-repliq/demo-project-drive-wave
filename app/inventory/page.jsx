@@ -23,7 +23,7 @@ const InventoryPage = () => {
   };
 
   // use tanstake query to get all products
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, refetch } = useQuery({
     queryKey: ["products"],
     queryFn: fetchProducts,
   });
@@ -109,7 +109,8 @@ const InventoryPage = () => {
         <div className="bg-gray-100">
            <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-4  min-h-screen p-10 container mx-auto">
           {filteredProducts?.map((product) => (
-            <ProductCard key={product.id} product={product}>
+            <ProductCard key={product.id} product={product} 
+            refetch={refetch}>
               {" "}
               {product.id}{" "}
             </ProductCard>
