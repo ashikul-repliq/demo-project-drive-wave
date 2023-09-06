@@ -151,7 +151,7 @@ const dataExist = filterFavData?.find((item) => {
                     ListedOn: {ListedOn || createdAt}
                   </span>
                   <AiOutlineEye fill="red"></AiOutlineEye>
-                  <span className="text-gray-400 ml-2">Views: {Views}</span>
+                  <span className="text-gray-400 ml-2">Views: {Views || '0'}</span>
                 </div>
 
                 <div className="relative ">
