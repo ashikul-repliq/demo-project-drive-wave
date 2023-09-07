@@ -6,9 +6,12 @@ import Image from "next/image";
 import React, { useState } from "react";
 
 const InventoryPage = () => {
+  
   const [conditionFilter, setConditionFilter] = useState("All");
+  const [searchValue, setSearchValue] = useState("");
 
-  // fetch function
+
+// fetch function
 
   const fetchProducts = async () => {
     try {
@@ -40,6 +43,17 @@ const InventoryPage = () => {
     });
   }
 
+  //search system
+
+  if (searchValue.length > 0) {
+    filteredProducts = filteredProducts.filter((product) => {
+      return product.Name.toLowerCase().match(searchValue.toLowerCase());
+    });
+  }
+ 
+ 
+
+
   return (
     <div className="bg-gray-100">
       {/* banner  */}
@@ -66,38 +80,46 @@ const InventoryPage = () => {
         Cars
       </h1>
       {/* filter by  condition  */}
-      <div className="bg-gray-100">
-        {" "}
-        <div className="p-4 container mx-auto ">
-          <label className="font-semibold block mb-2">
-            Filter by Condition:
-          </label>
-          <div className="relative inline-block w-full">
-            <select
-              onChange={(e) => setConditionFilter(e.target.value)}
-              value={conditionFilter}
-              className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline"
-            >
-              <option value="All">All</option>
-              <option value="Used">Used</option>
-              <option value="Brand New">Brand New</option>
-            </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              <svg
-                className="fill-current h-4 w-4"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M7.293 4.293a1 1 0 011.414 0L10 5.586l1.293-1.293a1 1 0 111.414 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>{" "}
+      <div className="bg-gray-100 flex items-center justify-between w-full container mx-auto">
+  <div className="pl-10 flex items-center justify-center">
+    <p className="text-black font-bold text-2xl ">Search:</p>
+    <input
+      type="text"
+      placeholder="Search..."
+      value={searchValue}
+      onChange={(e) => setSearchValue(e.target.value)}
+      className="appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline"
+    />
+  </div>
+  <div className="p-4">
+    <label className="font-semibold block mb-2">Filter by Condition:</label>
+    <div className="relative inline-block w-full">
+      <select
+        onChange={(e) => setConditionFilter(e.target.value)}
+        value={conditionFilter}
+        className="appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline"
+      >
+        <option value="All">All</option>
+        <option value="Used">Used</option>
+        <option value="Brand New">Brand New</option>
+      </select>
+      <div className="pointer-events-none absolute inset-y-0 right-2 flex items-center px-2 text-gray-700">
+        <svg
+          className="fill-current h-4 w-4"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+        >
+          <path
+            fillRule="evenodd"
+            d="M7.293 4.293a1 1 0 011.414 0L10 5.586l1.293-1.293a1 1 0 111.414 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 010-1.414z"
+            clipRule="evenodd"
+          />
+        </svg>
       </div>
+    </div>
+  </div>
+</div>
+
 
       {/* products list  */}
 
@@ -110,12 +132,16 @@ const InventoryPage = () => {
       ) : (
         <div className="bg-gray-100">
           <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-4  min-h-screen p-10 container mx-auto">
-            {filteredProducts?.map((product) => (
+            {filteredProducts.length ? (filteredProducts?.map((product) => (
               <ProductCard key={product.id} product={product} refetch={refetch}>
                 {" "}
                 {product.id}{" "}
               </ProductCard>
-            ))}
+            )) ) : (
+              <h1 className="text-3xl font-bold text-rose-400">
+                No car found
+              </h1>
+            )}   
           </div>
         </div>
       )}

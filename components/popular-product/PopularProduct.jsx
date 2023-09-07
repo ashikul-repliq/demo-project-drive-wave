@@ -71,7 +71,7 @@ const PopularProduct = () => {
               href="/inventory"
               className=" py-3   px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-red-700 hover:bg-black "
             >
-              view all
+              View all
             </Link>
           </button>
         </>
