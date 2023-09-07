@@ -77,18 +77,20 @@ const Navbar = () => {
           {data ? (
             <>
               {" "}
-              <li>
+              {/* <li>
                 <span className="font-medium tracking-wide text-gray-700 transition-colors duration-200  text-4xl hover:text-deep-purple-accent-400">
                   <RiAccountCircleFill></RiAccountCircleFill>
                 </span>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/"
-                 
-                 
-                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200 flex items-center justify-center gap-2  hover:text-purple-400 "
                 >
+                  <span className="font-medium tracking-wide text-gray-700 transition-colors duration-200  text-4xl hover:text-deep-purple-accent-400">
+                    {" "}
+                    <RiAccountCircleFill></RiAccountCircleFill>{" "}
+                  </span>
                   {data.name}
                 </Link>
               </li>
@@ -209,8 +211,6 @@ const Navbar = () => {
                         <li>
                           <Link
                             href="/"
-                          
-                          
                             className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400 
                             flex item-center "
                           >
