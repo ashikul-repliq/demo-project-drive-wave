@@ -11,7 +11,7 @@ import { toast } from "react-hot-toast";
 const SignInPage = () => {
   const { refetch } = GetCurrentUser();
   const router = useRouter();
-  const redirect =  localStorage.getItem('redirect') || '/';
+  const redirect =   '/';
  
   const initialValues = {
     email: "",
@@ -48,8 +48,8 @@ const SignInPage = () => {
       localStorage.setItem("current-user", JSON.stringify(isEmailExist));
     }
 toast.success('Sign-In Successful!');
-    router.push(redirect);
-    localStorage.removeItem('redirect');
+    router.push('/');
+   
     
     refetch();
     resetForm();

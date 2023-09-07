@@ -11,7 +11,7 @@ import { toast } from "react-hot-toast";
 const SignUpPage = () => {
   const { refetch } = GetCurrentUser();
   const router = useRouter();
-  const redirect =  localStorage.getItem('redirect') || '/';
+ 
 
   const initialValues = {
     name: "",
@@ -58,7 +58,7 @@ const SignUpPage = () => {
     resetForm();
     refetch();
     toast.success('Account Successfully created!');
-    router.push(redirect);
+    router.push('/');
   };
 
   return (
