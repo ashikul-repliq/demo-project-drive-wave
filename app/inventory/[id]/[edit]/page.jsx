@@ -1,9 +1,14 @@
 'use client'
+import CarEditForm from '@/components/car-edit-form/CarEditForm';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
+
 import React from 'react';
+import { toast } from 'react-hot-toast';
 
 const EditPage = ({params}) => {
+    const router = useRouter();
 
   // fetch function
 
@@ -25,32 +30,32 @@ const EditPage = ({params}) => {
     queryFn: fetchProducts,
   });
 
-  // console.log(data);
-  const {
-    Img,
-    Condition,
-    Name,
-    Views,
-    ListedOn,
-    createdAt,
-    Mileage,
-    Transmission,
-    Year,
-    FuelType,
-    Color,
-    Doors,
-    Cylinders,
-    VIN,
-    EngineSize,
-    Details,
-    CarFeatures,
-    VehicleHistory,
-    Reviews, id
-  } = data || {};
-  console.log(data);
+//handle edit form submit
+  const handleFormSubmit = (values) => {
+    
+     axios.put(`https://64f038f18a8b66ecf7794bb9.mockapi.io/products/${params.id}`, values)
+        .then((response) => {
+            console.log("Car updated successfully:", response.data);
+            toast.success("Car updated successfully");
+            router.push('/inventory');
+            }
+        )
+        .catch((error) => {
+            console.error("Error adding car:", error);
+        }
+        );
+  };
+ 
+
     return (
-        <div>
-            edit
+        <div className=" bg-gray-300 min-h-screen ">
+           {isLoading ? (
+          <div className="text-center  text-3xl min-h-screen   bg-gray-100">
+            loading...
+          </div>
+        ) : ( <div className='mx-auto container  py-20'><CarEditForm onSubmit={handleFormSubmit} data = {data}></CarEditForm></div>  )
+
+        }
         </div>
     );
 };

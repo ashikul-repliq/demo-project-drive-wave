@@ -19,7 +19,7 @@ const AddCar = () => {
       });
   };
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-300">
       <div className="mx-auto container  py-20">
       <CarForm onSubmit={handleFormSubmit} />
     </div>

@@ -1,22 +1,46 @@
+
 'use client'
 
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-const CarForm = ({ onSubmit }) => {
+const CarEditForm = ({ onSubmit ,data }) => {
+    const {
+        Img,
+        Condition,
+        Name,
+        Views,
+        ListedOn,
+        createdAt,
+        Mileage,
+        Transmission,
+        Year,
+        FuelType,
+        Color,
+        Doors,
+        Cylinders,
+        VIN,
+        EngineSize,
+        Details,
+        CarFeatures,
+        VehicleHistory,
+        Reviews, id ,Price,Model,Rating
+      } = data || {};
+    
+
   const formik = useFormik({
     initialValues: {
-      Name: '',
-      Img: '',
-      Price: '',
-      Model: '',
-      Rating: '',
-      Condition: '',
-      Transmission: '',
-      Mileage: '',
-      FuelType: '',
-      Details: '',
+      Name: Name,
+      Img: Img,
+      Price: Price,
+      Model: Model,
+      Rating: Rating,
+      Condition: Condition,
+      Transmission:Transmission ,
+      Mileage: Mileage,
+      FuelType: FuelType,
+      Details:  Details,
     },
     validationSchema: Yup.object({
       Name: Yup.string().required('Name is required'),
@@ -38,7 +62,7 @@ const CarForm = ({ onSubmit }) => {
 
   return (
     <form onSubmit={formik.handleSubmit} className="w-full max-w-md  lg:max-w-2xl mx-auto bg-white p-8 rounded-lg md:w-1/2 lg:w-1/2 shadow-lg">
-      <h2 className="text-2xl font-semibold mb-4 text-gray-800  text-center">Add a Car</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-gray-800  text-center">Edit a Car</h2>
       <div className="grid grid-cols-1 gap-6">
         <div className="mb-4">
           <label htmlFor="Name" className="block text-gray-700   font-bold ">Name</label>
@@ -212,7 +236,7 @@ const CarForm = ({ onSubmit }) => {
         {/* Submit button */}
         <div className="">
           <button type="submit" className="w-full bg-red-600 hover:bg-black text-white font-semibold py-2 px-4 rounded-lg">
-            Add Car
+            Edit a Car
           </button>
         </div>
       </div>
@@ -220,4 +244,4 @@ const CarForm = ({ onSubmit }) => {
   );
 };
 
-export default CarForm;
+export default CarEditForm;

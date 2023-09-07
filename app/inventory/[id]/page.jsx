@@ -25,7 +25,7 @@ import { LiaEditSolid } from "react-icons/lia";
 const SingleProductPage = ({ params }) => {
   const pathname = usePathname();
   const router = useRouter();
-  console.log(pathname);
+ 
   // fetch function
 
   const fetchProducts = async () => {
