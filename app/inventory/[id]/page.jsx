@@ -20,7 +20,8 @@ import GetCurrentUser from "@/utils/getCurrentUser";
 import GetFavData from "@/utils/getFavData";
 import { toast } from "react-hot-toast";
 import { usePathname, useRouter } from "next/navigation";
-
+import Link from "next/link";
+import { LiaEditSolid } from "react-icons/lia";
 const SingleProductPage = ({ params }) => {
   const pathname = usePathname();
   const router = useRouter();
@@ -65,11 +66,14 @@ const SingleProductPage = ({ params }) => {
     Details,
     CarFeatures,
     VehicleHistory,
-    Reviews,
+    Reviews, id
   } = data || {};
 
   //  get loggin user info
   const { data: user } = GetCurrentUser();
+
+  //admin
+  const admin = user?.email === "admin@gmail.com";
 
   // get favdata from mock api
   const { data: favData, refetch } = GetFavData();
@@ -136,13 +140,13 @@ const dataExist = filterFavData?.find((item) => {
                   <h1 className="pb-2 font-bold text-xl md:text-3xl  text-black ">
                     {Name}{" "}
                   </h1>
-
-                  <button
+               {admin ? <Link href={`/inventory/${id}/edit`} className="rounded-lg py-2 px-4 mb-2  flex items-center gap-2 md:text-xl text-white bg-slate-600"> Edit <LiaEditSolid></LiaEditSolid>    </Link> :<button
                     onClick={addToFavourite}
                     className={ ` rounded-lg py-2 px-4 mb-2  flex items-center gap-2 text-4xl ${dataExist ? 'text-red-600 ' : 'text-black '} `}
                   >
                     <AiFillHeart></AiFillHeart>
-                  </button>
+                  </button> }
+                  
                 </div>
 
                 <div className="flex items-center mb-4">
