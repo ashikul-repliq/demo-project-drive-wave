@@ -76,19 +76,19 @@ const InventoryPage = () => {
 
       {/* product  */}
 
-      <h1 className=" pt-3 text-center text-black font-bold md:text-5xl text-2xl bg-gray-100 ">
+      <h1 className=" py-3 text-center text-black font-bold md:text-5xl text-2xl bg-gray-100 ">
         Cars
       </h1>
       {/* filter by  condition  */}
-      <div className="bg-gray-100 flex items-center justify-between w-full container mx-auto">
-  <div className="pl-10 flex items-center justify-center">
+      <div className="bg-gray-100 flex items-center  md:justify-between justify-center md:flex-row flex-col   w-full container mx-auto">
+  <div className="pl-10 flex md:flex-row flex-col items-center justify-center ">
     <p className="text-black font-bold text-2xl ">Search:</p>
     <input
       type="text"
-      placeholder="Search..."
+      placeholder="Type a car name..."
       value={searchValue}
       onChange={(e) => setSearchValue(e.target.value)}
-      className="appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline"
+      className="appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline w-full "
     />
   </div>
   <div className="p-4">
