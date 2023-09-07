@@ -26,7 +26,7 @@ import { LiaEditSolid } from "react-icons/lia";
 const SingleProductPage = ({ params }) => {
   const pathname = usePathname();
   const router = useRouter();
- 
+
   // fetch function
 
   const fetchProducts = async () => {
@@ -67,7 +67,8 @@ const SingleProductPage = ({ params }) => {
     Details,
     CarFeatures,
     VehicleHistory,
-    Reviews, id
+    Reviews,
+    id,
   } = data || {};
 
   //  get loggin user info
@@ -81,10 +82,10 @@ const SingleProductPage = ({ params }) => {
 
   // filter fav data by user email
   const filterFavData = favData?.filter((item) => item.email === user?.email);
-//check data exit in the fav list 
-const dataExist = filterFavData?.find((item) => {
-  return item.Name === data?.Name;
-});
+  //check data exit in the fav list
+  const dataExist = filterFavData?.find((item) => {
+    return item.Name === data?.Name;
+  });
   // add to favourite function
 
   const addToFavourite = async () => {
@@ -130,24 +131,36 @@ const dataExist = filterFavData?.find((item) => {
       <div className=" bg-gray-300 min-h-screen     ">
         {isLoading ? (
           <div className="text-center  text-3xl min-h-screen flex items-center justify-center   bg-gray-100">
-           Loading....
+            <div className="flex justify-center items-center min-h-screen">
+              <div className="loader ease-linear rounded-full border-t-4 border-b-4 border-teal-500 h-16 w-16 animate-spin"></div>
+            </div>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
             <div className="col-span-2">
               <div className=" bg-white p-6 rounded-lg shadow-lg col-span-2 mx-5 mt-20 md:ml-20 mb-5 ">
-             
                 <div className="flex justify-between ">
                   <h1 className="pb-2 font-bold text-xl md:text-3xl  text-black ">
                     {Name}{" "}
                   </h1>
-               {admin ? <Link href={`/inventory/${id}/edit`} className="rounded-lg py-2 px-4 mb-2  flex items-center gap-2 md:text-xl text-white bg-slate-600"> Edit <LiaEditSolid></LiaEditSolid>    </Link> :<button
-                    onClick={addToFavourite}
-                    className={ ` rounded-lg py-2 px-4 mb-2  flex items-center gap-2 text-4xl ${dataExist ? 'text-red-600 ' : 'text-black '} `}
-                  >
-                    <AiFillHeart></AiFillHeart>
-                  </button> }
-                  
+                  {admin ? (
+                    <Link
+                      href={`/inventory/${id}/edit`}
+                      className="rounded-lg py-2 px-4 mb-2  flex items-center gap-2 md:text-xl text-white bg-slate-600"
+                    >
+                      {" "}
+                      Edit <LiaEditSolid></LiaEditSolid>{" "}
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={addToFavourite}
+                      className={` rounded-lg py-2 px-4 mb-2  flex items-center gap-2 text-4xl ${
+                        dataExist ? "text-red-600 " : "text-black "
+                      } `}
+                    >
+                      <AiFillHeart></AiFillHeart>
+                    </button>
+                  )}
                 </div>
 
                 <div className="flex items-center mb-4">
@@ -156,7 +169,9 @@ const dataExist = filterFavData?.find((item) => {
                     ListedOn: {ListedOn || createdAt}
                   </span>
                   <AiOutlineEye fill="red"></AiOutlineEye>
-                  <span className="text-gray-400 ml-2">Views: {Views || '0'}</span>
+                  <span className="text-gray-400 ml-2">
+                    Views: {Views || "0"}
+                  </span>
                 </div>
 
                 <div className="relative ">
