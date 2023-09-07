@@ -1,6 +1,7 @@
 "use client";
 
 import FavouriteCard from "@/components/favourite-card/FavouriteCard";
+import Scale from "@/components/scaleton/Scale";
 import GetCurrentUser from "@/utils/getCurrentUser";
 import GetFavData from "@/utils/getFavData";
 import React from "react";
@@ -26,7 +27,7 @@ const page = () => {
 
       {isLoading ? (
         <div className="text-center  text-3xl min-h-screen flex items-center justify-center  bg-gray-100">
-          loading...
+          <Scale />
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center gap-4  min-h-screen p-10 bg-gray-100">

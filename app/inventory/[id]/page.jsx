@@ -22,6 +22,7 @@ import { toast } from "react-hot-toast";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { LiaEditSolid } from "react-icons/lia";
+
 const SingleProductPage = ({ params }) => {
   const pathname = usePathname();
   const router = useRouter();
@@ -128,8 +129,8 @@ const dataExist = filterFavData?.find((item) => {
       {/* // single product  */}
       <div className=" bg-gray-300 min-h-screen     ">
         {isLoading ? (
-          <div className="text-center  text-3xl min-h-screen   bg-gray-100">
-            loading...
+          <div className="text-center  text-3xl min-h-screen flex items-center justify-center   bg-gray-100">
+           Loading....
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
