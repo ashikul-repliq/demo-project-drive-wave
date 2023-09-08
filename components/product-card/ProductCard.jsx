@@ -90,8 +90,8 @@ const ProductCard = ({ product, refetch }) => {
           <h1 className="text-gray-400 ml-1">(58.5k Review)</h1>
         </div>
         <div className="flex items-center my-2">
-          <BiCableCar fill="red"></BiCableCar>
-          <span className="text-gray-400 mx-2 "> {Transmission}</span>
+          <BiCableCar className="text-gray-400"  ></BiCableCar>
+          <span className="text-gray-600 mx-2 "> {Transmission}</span>
           <GiRoad fill="red"></GiRoad>
           <span className="text-gray-400 ml-2"> {Mileage}</span>
         </div>
@@ -111,11 +111,11 @@ const ProductCard = ({ product, refetch }) => {
 
           <Link
             href={`/inventory/${id}`}
-            className="bg-black text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300 ease-in-out"
+            className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition duration-300 ease-in-out"
           >
             <h1 className="flex items-center gap-2 font-bold">
               {" "}
-              <AiOutlineEye></AiOutlineEye> Details
+              Details
             </h1>
           </Link>
         </div>
