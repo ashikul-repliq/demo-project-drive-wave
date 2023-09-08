@@ -28,7 +28,7 @@ const ProductCard = ({ product, refetch }) => {
 
   const starIcons = [];
   for (let i = 0; i < Rating; i++) {
-    starIcons.push(<AiFillStar key={i} fill="brown" />);
+    starIcons.push(<AiFillStar key={i} fill="gold" />);
   }
   const { data } = GetCurrentUser();
   //admin

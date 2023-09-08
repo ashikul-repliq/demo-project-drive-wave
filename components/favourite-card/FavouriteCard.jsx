@@ -9,7 +9,7 @@ const FavouriteCard = ({ product, refetch }) => {
   const { Img, Name, Details, Price, Rating, id } = product;
   const starIcons = [];
   for (let i = 0; i < Rating; i++) {
-    starIcons.push(<AiFillStar key={i} fill="brown" />);
+    starIcons.push(<AiFillStar key={i} fill="gold" />);
   }
 
   // delete fav function
