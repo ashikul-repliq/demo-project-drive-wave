@@ -76,11 +76,11 @@ const InventoryPage = () => {
 
       {/* product  */}
 
-      <h1 className=" py-3 text-center text-black font-bold md:text-5xl text-2xl bg-gray-100 ">
+      <h1 className=" py-3 text-center text-black font-bold md:text-5xl text-2xl bg-gray-100 hidden md:block ">
         Cars
       </h1>
       {/* filter by  condition  */}
-      <div className="bg-gray-100 flex items-center  md:justify-between justify-center md:flex-row flex-col   w-full container mx-auto">
+      <div className="bg-gray-100 flex items-center  md:justify-between justify-center md:flex-row flex-col   w-full container mx-auto pt-6">
   <div className="pl-10 flex md:flex-row flex-col items-center justify-center ">
     <p className="text-black font-bold text-2xl ">Search:</p>
     <input
