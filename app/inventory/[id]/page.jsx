@@ -306,8 +306,8 @@ const SingleProductPage = ({ params }) => {
                   {CarFeatures?.map((feature, index) => (
                     <li key={index}>
                       <div className="flex items-center gap-2">
-                        <IoCheckmarkDoneCircleOutline className="text-red-700"></IoCheckmarkDoneCircleOutline>
-                        <span className="text-gray-400"> {feature}</span>
+                        <IoCheckmarkDoneCircleOutline className="text-gray-400"></IoCheckmarkDoneCircleOutline>
+                        <span className="text-gray-600"> {feature}</span>
                       </div>
                     </li>
                   ))}
@@ -321,8 +321,8 @@ const SingleProductPage = ({ params }) => {
                   {VehicleHistory?.map((feature, index) => (
                     <li key={index}>
                       <div className="flex items-center gap-2">
-                        <IoCheckmarkDoneCircleOutline className="text-red-700"></IoCheckmarkDoneCircleOutline>
-                        <span className="text-gray-400"> {feature}</span>
+                        <IoCheckmarkDoneCircleOutline className="text-gray-400"></IoCheckmarkDoneCircleOutline>
+                        <span className="text-gray-600"> {feature}</span>
                       </div>
                     </li>
                   ))}
