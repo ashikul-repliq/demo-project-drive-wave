@@ -126,7 +126,7 @@ const InventoryPage = () => {
       {isLoading ? (
         <div className="text-center  text-3xl min-h-screen flex items-center justify-center  bg-gray-100">
           <div className="flex justify-center items-center min-h-screen">
-            <div className="loader ease-linear rounded-full border-t-4 border-b-4 border-teal-500 h-16 w-16 animate-spin"></div>
+            <div className=" ease-linear rounded-full border-t-4 border-b-4 border-teal-500 h-16 w-16 animate-spin"></div>
           </div>
         </div>
       ) : (

@@ -110,7 +110,7 @@ const ProductCard = ({ product, refetch }) => {
 
           <Link
             href={`/inventory/${id}`}
-            className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-black transition duration-300 ease-in-out"
+            className="bg-black text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300 ease-in-out"
           >
             <h1 className="flex items-center gap-2 font-bold">
               {" "}

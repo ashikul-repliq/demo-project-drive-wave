@@ -185,12 +185,12 @@ const SingleProductPage = ({ params }) => {
                   />
                   <div className="absolute  top-4 left-2">
                     {Condition === "Brand New" ? (
-                      <h1 className="text-white bg-green-600 rounded p-2 inline">
+                      <h1 className="text-white text-sm bg-green-600 rounded-full px-4 py-2  inline bg-opacity-80">
                         {" "}
                         New
                       </h1>
                     ) : (
-                      <h1 className="text-white bg-red-600 rounded p-2 inline">
+                      <h1 className="text-white bg-yellow-600 rounded-full px-4 py-2 text-sm inline bg-opacity-80">
                         Used
                       </h1>
                     )}

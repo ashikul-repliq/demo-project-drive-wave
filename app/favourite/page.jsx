@@ -44,7 +44,7 @@ const page = () => {
             ))
           ) : (
             <h1 className="text-3xl font-bold text-gray-400">
-              No favourite item
+              No favourite car 
             </h1>
           )}
         </div>
