@@ -344,13 +344,13 @@ const SingleProductPage = ({ params }) => {
                       {review?.Name}
                     </h1>
                     <div className="flex items-center mb-4">
-                      <AiOutlineClockCircle fill="red"></AiOutlineClockCircle>
-                      <span className="text-red-600 mx-2 ">
+                      <AiOutlineClockCircle className="text-gray-400  "></AiOutlineClockCircle>
+                      <span className="text-gray-600 mx-2 ">
                         {" "}
                         {review?.Date}
                       </span>
                     </div>
-                    <p className="text-gray-400">{review?.Comment}</p>
+                    <p className="text-gray-600">{review?.Comment}</p>
                   </div>
                 ))}
               </div>
