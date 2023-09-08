@@ -30,7 +30,7 @@ const page = () => {
           <Scale />
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center gap-4  min-h-screen p-10 bg-gray-100">
+        <div className="flex flex-col items-center justify-center gap-4 w-full  min-h-screen p-10 bg-gray-100">
           {filterFavData.length ? (
             filterFavData?.map((product) => (
               <FavouriteCard

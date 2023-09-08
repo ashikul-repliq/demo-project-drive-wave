@@ -27,7 +27,7 @@ const deleteFav = async (id) => {
 
     return (
         <>
-           <div className="flex max-w-xl overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+           <div className="flex max-w-full overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
       <div className="w-1/3 bg-cover " style={{ backgroundImage: `url('${Img}')` }}></div>
     
     
@@ -42,7 +42,7 @@ const deleteFav = async (id) => {
         </div>
 
         <div className="flex justify-between mt-3 item-center">
-<h1 className="text-lg font-bold text-gray-700 dark:text-gray-200 md:text-xl"> {Price} </h1>
+<h1 className="text-lg font-bold text-emerald-400  md:text-xl"> {Price} </h1>
             <button onClick={()=>deleteFav(id)} className="px-2 py-1 text-xs font-bold text-white uppercase transition-colors duration-300 transform bg-red-800 rounded  hover:bg-gray-700  focus:outline-none focus:bg-gray-700">Delete </button>
         </div>
     </div>
