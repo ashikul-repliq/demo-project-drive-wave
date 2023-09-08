@@ -207,86 +207,82 @@ const SingleProductPage = ({ params }) => {
                 <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                   <div className="flex   gap-3">
                     <AiOutlineCar
-                      className="text-2xl"
-                      fill="red"
+                      className="text-2xl text-gray-400"
+                      
                     ></AiOutlineCar>
                     <div>
-                      <h1 className="text-gray-400 text-xl ">Condition</h1>
+                      <h1 className="text-gray-600 text-xl ">Condition</h1>
                       <h1 className="text-black font-bold ">{Condition}</h1>
                     </div>
                   </div>
                   <div className="flex   gap-3">
-                    <GiRoad className="text-2xl" fill="red"></GiRoad>
+                    <GiRoad  className="text-2xl text-gray-400"></GiRoad>
                     <div>
-                      <h1 className="text-gray-400 text-xl ">Mileage</h1>
+                      <h1 className="text-gray-600 text-xl ">Mileage</h1>
                       <h1 className="text-black font-bold ">{Mileage}</h1>
                     </div>
                   </div>
                   <div className="flex   gap-3">
                     <AiOutlineSetting
-                      className="text-2xl"
-                      fill="red"
+                      className="text-2xl text-gray-400"
                     ></AiOutlineSetting>
                     <div>
-                      <h1 className="text-gray-400 text-xl ">Transmission</h1>
+                      <h1 className="text-gray-600 text-xl ">Transmission</h1>
                       <h1 className="text-black font-bold ">{Transmission}</h1>
                     </div>
                   </div>
                   <div className="flex   gap-3">
-                    <BiTime className="text-2xl" fill="red"></BiTime>
+                    <BiTime  className="text-2xl text-gray-400"></BiTime>
                     <div>
-                      <h1 className="text-gray-400 text-xl ">Year</h1>
+                      <h1 className="text-gray-600 text-xl ">Year</h1>
                       <h1 className="text-black font-bold ">{Year}</h1>
                     </div>
                   </div>
                   <div className="flex   gap-3">
                     <BsFillFuelPumpFill
-                      className="text-2xl"
-                      fill="red"
+                     className="text-2xl text-gray-400"
                     ></BsFillFuelPumpFill>
                     <div>
-                      <h1 className="text-gray-400 text-xl ">FuelType</h1>
+                      <h1 className="text-gray-600 text-xl ">FuelType</h1>
                       <h1 className="text-black font-bold ">{FuelType}</h1>
                     </div>
                   </div>
                   <div className="flex   gap-3">
-                    <BiColorFill className="text-2xl" fill="red"></BiColorFill>
+                    <BiColorFill  className="text-2xl text-gray-400"></BiColorFill>
                     <div>
-                      <h1 className="text-gray-400 text-xl ">Color</h1>
+                      <h1 className="text-gray-600 text-xl ">Color</h1>
                       <h1 className="text-black font-bold ">{Color}</h1>
                     </div>
                   </div>
                   <div className="flex   gap-3">
-                    <BiCard className="text-2xl" fill="red"></BiCard>
+                    <BiCard  className="text-2xl text-gray-400"></BiCard>
                     <div>
-                      <h1 className="text-gray-400 text-xl ">Doors</h1>
+                      <h1 className="text-gray-600 text-xl ">Doors</h1>
                       <h1 className="text-black font-bold ">{Doors}</h1>
                     </div>
                   </div>
                   <div className="flex   gap-3">
-                    <BiCylinder className="text-2xl" fill="red"></BiCylinder>
+                    <BiCylinder  className="text-2xl text-gray-400"></BiCylinder>
                     <div>
-                      <h1 className="text-gray-400 text-xl ">Cylinders</h1>
+                      <h1 className="text-gray-600 text-xl ">Cylinders</h1>
                       <h1 className="text-black font-bold ">{Cylinders}</h1>
                     </div>
                   </div>
                   <div className="flex   gap-3">
                     <SiUnrealengine
-                      className="text-2xl"
-                      fill="red"
+                      className="text-2xl text-gray-400"
                     ></SiUnrealengine>
                     <div>
-                      <h1 className="text-gray-400 text-xl ">EngineSize</h1>
+                      <h1 className="text-gray-600 text-xl ">EngineSize</h1>
                       <h1 className="text-black font-bold ">{EngineSize}</h1>
                     </div>
                   </div>
                   <div className="flex   gap-3">
                     <SiAirplayaudio
-                      className="text-2xl"
-                      fill="red"
+                      className="text-2xl text-gray-400"
                     ></SiAirplayaudio>
                     <div>
-                      <h1 className="text-gray-400 text-xl ">VIN</h1>
+                      <h1 className="text-gray-600 text-xl ">VIN</h1>
                       <h1 className="text-black font-bold ">{VIN}</h1>
                     </div>
                   </div>
