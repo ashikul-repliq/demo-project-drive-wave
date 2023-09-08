@@ -51,15 +51,7 @@ const FavouriteCard = ({ product, refetch }) => {
               {" "}
               {Price}{" "}
             </h1>
-            <Link
-              href={`/inventory/${id}`}
-              className="hover:bg-blue-700 text-white px-4 py-2 rounded-lg bg-black transition duration-300 ease-in-out text-sm"
-            >
-              <h1 className="flex items-center gap-2 font-bold">
-                {" "}
-                <AiOutlineEye></AiOutlineEye> Details
-              </h1>
-            </Link>
+           
             <button
               onClick={() => deleteFav(id)}
               className="px-2 py-1 text-4xl font-bold   transition-colors duration-300 transform text-red-600   hover:text-red-700"
