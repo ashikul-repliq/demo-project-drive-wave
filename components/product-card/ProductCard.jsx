@@ -92,14 +92,14 @@ const ProductCard = ({ product, refetch }) => {
         <div className="flex items-center my-2">
           <BiCableCar className="text-gray-400"  ></BiCableCar>
           <span className="text-gray-600 mx-2 "> {Transmission}</span>
-          <GiRoad fill="red"></GiRoad>
-          <span className="text-gray-400 ml-2"> {Mileage}</span>
+          <GiRoad className="text-gray-400"></GiRoad>
+          <span className="text-gray-600 ml-2"> {Mileage}</span>
         </div>
         <div className="flex items-center mt-2 mb-5">
-          <AiFillCar fill="red"></AiFillCar>
-          <span className="text-gray-400 mx-2 "> Model: {Model}</span>
-          <BsFillFuelPumpFill fill="red"></BsFillFuelPumpFill>
-          <span className="text-gray-400 ml-2">
+          <AiFillCar className="text-gray-400"></AiFillCar>
+          <span className="text-gray-600 mx-2 "> Model: {Model}</span>
+          <BsFillFuelPumpFill className="text-gray-400"></BsFillFuelPumpFill>
+          <span className="text-gray-600 ml-2">
             {" "}
             {Hybrid === true ? "Hybrid" : "Not Hybrid"}
           </span>
