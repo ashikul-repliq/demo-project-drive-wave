@@ -5,11 +5,12 @@ import { BiCableCar } from "react-icons/bi";
 import { GiRoad } from "react-icons/gi";
 import { BsFillFuelPumpFill } from "react-icons/bs";
 import Link from "next/link";
-import { TiDeleteOutline } from "react-icons/ti";
+
 import GetCurrentUser from "@/utils/getCurrentUser";
 import axios from "axios";
 
 import { toast } from "react-hot-toast";
+import { MdDelete } from "react-icons/md";
 
 const ProductCard = ({ product, refetch }) => {
   const {
@@ -55,9 +56,9 @@ const ProductCard = ({ product, refetch }) => {
       {admin && (
         <div
           onClick={deleteProduct}
-          className="absolute text-4xl text-red-600 hover:text-black -top-4 -left-2"
+          className="absolute text-4xl text-red-600 hover:text-yellow-300 top-6 right-4 z-50"
         >
-          <TiDeleteOutline></TiDeleteOutline>
+          <MdDelete></MdDelete>
         </div>
       )}
       <div className=" bg-white p-4 rounded-lg shadow-lg  h-min ">
