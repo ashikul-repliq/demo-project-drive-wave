@@ -5,10 +5,10 @@ import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineTwitter } from "react-i
 export const Footer = () => {
     return (
       <div className="bg-black">
-      <div className="px-4 pt-16 mx-auto  md:px-24 lg:px-8  container mx-auto">
+      <div className="px-4 pt-16 mx-auto  md:px-24 lg:px-8  container ">
         <div className="grid gap-16 row-gap-10 mb-8 lg:grid-cols-6">
           <div className="md:max-w-md lg:col-span-2">
-          <Link href="/" className="inline-flex items-center mr-8">
+          <Link href="#" className="inline-flex items-center mr-8">
             <Image
               width={50}
               height={50}
@@ -34,32 +34,32 @@ export const Footer = () => {
               <ul className="mt-2 space-y-2">
                 <li>
                   <a
-                    href="/"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                    href="#"
+                    className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     Home
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                    href="#"
+                    className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     About
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                    href="#"
+                    className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     Contact
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                    href="#"
+                    className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                      Services
                   </a>
@@ -73,8 +73,8 @@ export const Footer = () => {
               <ul className="mt-2 space-y-2">
                 <li>
                   <a
-                    href="/"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                    href="#"
+                    className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                    car selling
                   </a>
@@ -82,24 +82,24 @@ export const Footer = () => {
                
                 <li>
                   <a
-                    href="/"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                    href="#"
+                    className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                         car renting
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                    href="#"
+                    className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                           car servicing
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                    href="#"
+                    className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                             car insurance
                   </a>
@@ -111,40 +111,40 @@ export const Footer = () => {
               <ul className="mt-2 space-y-2">
                 <li>
                   <a
-                    href="/"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                    href="#"
+                    className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                      FAQ&apos;s
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                    href="#"
+                    className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                     Affiliates
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                    href="#"
+                    className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                      Contact Us
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                    href="#"
+                    className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                         Privacy Policy
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                    href="#"
+                    className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
                             Terms &amp; Conditions  
                   </a>
@@ -155,20 +155,20 @@ export const Footer = () => {
               <p className="font-semibold tracking-wide text-white">Social-Media</p>
               <div className="flex items-center mt-4 space-x-4 sm:mt-0">
             <a
-              href="/"
-              className="text-gray-500 transition-colors duration-300 hover:text-purple-400 text-2xl"
+              href="#"
+              className="text-gray-600 transition-colors duration-300 hover:text-purple-400 text-2xl"
             >
              <AiOutlineTwitter></AiOutlineTwitter>
             </a>
             <a
-              href="/"
-              className="text-gray-500 transition-colors duration-300 hover:text-purple-400 text-2xl"
+              href="#"
+              className="text-gray-600 transition-colors duration-300 hover:text-purple-400 text-2xl"
             >
              <AiOutlineInstagram></AiOutlineInstagram>
             </a>
             <a
-              href="/"
-              className="text-gray-500 transition-colors duration-300 hover:text-purple-400 text-2xl"
+              href="#"
+              className="text-gray-600 transition-colors duration-300 hover:text-purple-400 text-2xl"
             >
               <AiOutlineFacebook></AiOutlineFacebook>
             </a>
