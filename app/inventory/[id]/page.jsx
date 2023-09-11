@@ -9,6 +9,7 @@ import {
   AiOutlineCar,
   AiOutlineClockCircle,
   AiOutlineEye,
+  AiOutlineHeart,
   AiOutlineSetting,
 } from "react-icons/ai";
 import { BiCard, BiColorFill, BiCylinder, BiTime } from "react-icons/bi";
@@ -151,15 +152,24 @@ const SingleProductPage = ({ params }) => {
                       Edit <LiaEditSolid></LiaEditSolid>{" "}
                     </Link>
                   ) : (
+                    dataExist?  (
                     <button
                       onClick={addToFavourite}
                       className={` rounded-lg py-2 px-4 mb-2  flex items-center gap-2 text-4xl ${
-                        dataExist ? "text-red-600 " : "text-black "
+                        dataExist ? "text-green-600 " : "text-black "
                       } `}
                     >
                       <AiFillHeart></AiFillHeart>
                     </button>
-                  )}
+                  )    : (
+                    <button
+                      onClick={addToFavourite}
+                      className={` rounded-lg py-2 px-4 mb-2  flex items-center gap-2 text-4xl  text-green-600 
+                     `}
+                    >
+                      <AiOutlineHeart></AiOutlineHeart>
+                    </button> )  ) 
+                    }
                 </div>
 
                 <div className="flex items-center mb-4">
