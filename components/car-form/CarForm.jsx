@@ -21,7 +21,10 @@ const CarForm = ({ onSubmit }) => {
     validationSchema: Yup.object({
       Name: Yup.string().required('Name is required'),
       Img: Yup.string().url('Must be a valid URL'),
-      Price: Yup.string().required('Price is required'),
+      Price: Yup.number()
+    .required('Price is required')
+    .positive('Price should be a positive number')
+    .integer('Price should be an integer'),
       Model: Yup.string().required('Model is required'),
       Rating: Yup.number().required('Rating is required').min(0).max(5),
       Condition: Yup.string().required('Condition is required'),
@@ -211,7 +214,7 @@ const CarForm = ({ onSubmit }) => {
 
         {/* Submit button */}
         <div className="">
-          <button type="submit" className="w-full bg-red-600 hover:bg-black text-white font-semibold py-2 px-4 rounded-lg">
+          <button type="submit" className="w-full bg-gray-900 hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg">
             Add Car
           </button>
         </div>
