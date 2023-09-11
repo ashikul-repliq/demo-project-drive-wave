@@ -138,7 +138,7 @@ const InventoryPage = () => {
                 {product.id}{" "}
               </ProductCard>
             )) ) : (
-              <h1 className="text-3xl font-bold text-rose-400">
+              <h1 className="text-3xl font-bold text-gray-400">
                 No car found
               </h1>
             )}   
