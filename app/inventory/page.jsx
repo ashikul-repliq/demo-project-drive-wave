@@ -82,7 +82,7 @@ const InventoryPage = () => {
       {/* filter by  condition  */}
       <div className="bg-gray-100 flex items-center  md:justify-between justify-center md:flex-row flex-col   w-full container mx-auto pt-6">
   <div className="pl-10 flex md:flex-row flex-col items-center justify-center ">
-    <p className="text-black font-bold text-2xl ">Search:</p>
+    <p className="text-black font-bold text-2xl mr-3">Search:</p>
     <input
       type="text"
       placeholder="Type a car name..."
