@@ -16,7 +16,7 @@ const Banner = () => {
               Welcome to Drive-Wave 
               <br className="hidden md:block" />
              Best place to buy{' '}
-              <span className="inline-block text-red-700">
+              <span className="inline-block text-green-700">
              Your dream  car
               </span>
             </h2>
@@ -27,7 +27,7 @@ const Banner = () => {
           <div className="flex flex-col items-center md:flex-row">
             <Link 
             href="/inventory"
-            className="inline-flex  bg-red-600 items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md md:w-auto md:mr-4 md:mb-0  hover:bg-black  "
+            className="inline-flex  items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md md:w-auto md:mr-4 md:mb-0  bg-gray-900 hover:bg-gray-700  "
             >
               <span className="mr-3 ">Start Shopping</span>
               <BiRightArrowAlt/>
