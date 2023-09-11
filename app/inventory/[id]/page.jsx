@@ -19,12 +19,11 @@ import { IoCheckmarkDoneCircleOutline } from "react-icons/io5";
 import GetCurrentUser from "@/utils/getCurrentUser";
 import GetFavData from "@/utils/getFavData";
 import { toast } from "react-hot-toast";
-import {  useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { LiaEditSolid } from "react-icons/lia";
 
 const SingleProductPage = ({ params }) => {
-  
   const router = useRouter();
 
   // fetch function
@@ -92,7 +91,7 @@ const SingleProductPage = ({ params }) => {
     try {
       if (!user?.email) {
         toast.error("please login first");
-    
+
         router.push("/sign-in");
         return;
       } else {
@@ -164,12 +163,12 @@ const SingleProductPage = ({ params }) => {
                 </div>
 
                 <div className="flex items-center mb-4">
-                  <AiOutlineClockCircle fill="red"></AiOutlineClockCircle>
-                  <span className="text-gray-400 mx-2 ">
+                  <AiOutlineClockCircle className="text-gray-400 "></AiOutlineClockCircle>
+                  <span className="text-gray-600 mx-2 ">
                     ListedOn: {ListedOn || createdAt}
                   </span>
-                  <AiOutlineEye fill="red"></AiOutlineEye>
-                  <span className="text-gray-400 ml-2">
+                  <AiOutlineEye className="text-gray-400 "></AiOutlineEye>
+                  <span className="text-gray-600 ml-2">
                     Views: {Views || "0"}
                   </span>
                 </div>
@@ -206,81 +205,70 @@ const SingleProductPage = ({ params }) => {
                 </h1>
                 <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                   <div className="flex   gap-3">
-                    <AiOutlineCar
-                      className="text-2xl text-gray-400"
-                      
-                    ></AiOutlineCar>
+                    <AiOutlineCar className="text-2xl text-gray-400"></AiOutlineCar>
                     <div>
                       <h1 className="text-gray-600 text-xl ">Condition</h1>
                       <h1 className="text-black font-bold ">{Condition}</h1>
                     </div>
                   </div>
                   <div className="flex   gap-3">
-                    <GiRoad  className="text-2xl text-gray-400"></GiRoad>
+                    <GiRoad className="text-2xl text-gray-400"></GiRoad>
                     <div>
                       <h1 className="text-gray-600 text-xl ">Mileage</h1>
                       <h1 className="text-black font-bold ">{Mileage}</h1>
                     </div>
                   </div>
                   <div className="flex   gap-3">
-                    <AiOutlineSetting
-                      className="text-2xl text-gray-400"
-                    ></AiOutlineSetting>
+                    <AiOutlineSetting className="text-2xl text-gray-400"></AiOutlineSetting>
                     <div>
                       <h1 className="text-gray-600 text-xl ">Transmission</h1>
                       <h1 className="text-black font-bold ">{Transmission}</h1>
                     </div>
                   </div>
                   <div className="flex   gap-3">
-                    <BiTime  className="text-2xl text-gray-400"></BiTime>
+                    <BiTime className="text-2xl text-gray-400"></BiTime>
                     <div>
                       <h1 className="text-gray-600 text-xl ">Year</h1>
                       <h1 className="text-black font-bold ">{Year}</h1>
                     </div>
                   </div>
                   <div className="flex   gap-3">
-                    <BsFillFuelPumpFill
-                     className="text-2xl text-gray-400"
-                    ></BsFillFuelPumpFill>
+                    <BsFillFuelPumpFill className="text-2xl text-gray-400"></BsFillFuelPumpFill>
                     <div>
                       <h1 className="text-gray-600 text-xl ">FuelType</h1>
                       <h1 className="text-black font-bold ">{FuelType}</h1>
                     </div>
                   </div>
                   <div className="flex   gap-3">
-                    <BiColorFill  className="text-2xl text-gray-400"></BiColorFill>
+                    <BiColorFill className="text-2xl text-gray-400"></BiColorFill>
                     <div>
                       <h1 className="text-gray-600 text-xl ">Color</h1>
                       <h1 className="text-black font-bold ">{Color}</h1>
                     </div>
                   </div>
                   <div className="flex   gap-3">
-                    <BiCard  className="text-2xl text-gray-400"></BiCard>
+                    <BiCard className="text-2xl text-gray-400"></BiCard>
                     <div>
                       <h1 className="text-gray-600 text-xl ">Doors</h1>
                       <h1 className="text-black font-bold ">{Doors}</h1>
                     </div>
                   </div>
                   <div className="flex   gap-3">
-                    <BiCylinder  className="text-2xl text-gray-400"></BiCylinder>
+                    <BiCylinder className="text-2xl text-gray-400"></BiCylinder>
                     <div>
                       <h1 className="text-gray-600 text-xl ">Cylinders</h1>
                       <h1 className="text-black font-bold ">{Cylinders}</h1>
                     </div>
                   </div>
                   <div className="flex   gap-3">
-                    <SiUnrealengine
-                      className="text-2xl text-gray-400"
-                    ></SiUnrealengine>
+                    <SiUnrealengine className="text-2xl text-gray-400"></SiUnrealengine>
                     <div>
                       <h1 className="text-gray-600 text-xl ">EngineSize</h1>
                       <h1 className="text-black font-bold ">{EngineSize}</h1>
                     </div>
                   </div>
                   <div className="flex   gap-3">
-                    <SiAirplayaudio
-                      className="text-2xl text-gray-400"
-                    ></SiAirplayaudio>
+                    <SiAirplayaudio className="text-2xl text-gray-400"></SiAirplayaudio>
                     <div>
                       <h1 className="text-gray-600 text-xl ">VIN</h1>
                       <h1 className="text-black font-bold ">{VIN}</h1>
@@ -295,7 +283,7 @@ const SingleProductPage = ({ params }) => {
                   Discription
                 </h1>
 
-                <p className="text-gray-400">{Details} </p>
+                <p className="text-gray-600">{Details} </p>
 
                 <h1 className="py-3 font-bold text-xl md:text-2xl  text-black ">
                   {" "}
