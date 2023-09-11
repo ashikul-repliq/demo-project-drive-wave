@@ -29,7 +29,7 @@ const FavouriteCard = ({ product, refetch }) => {
 
   return (
     <>
-      <div className="flex max-w-full overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+      <div className="flex max-w-xl overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
         <div
           className="w-1/3 bg-cover "
           style={{ backgroundImage: `url('${Img}')` }}
