@@ -69,7 +69,7 @@ const PopularProduct = () => {
           <button className=" flex item-center justify-center text-center  w-full bg-gray-100 pb-8">
             <Link
               href="/inventory"
-              className=" py-3   px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-red-700 hover:bg-black "
+              className=" py-3   px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-gray-900 hover:bg-gray-700 "
             >
               View all
             </Link>
