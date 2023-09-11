@@ -45,7 +45,10 @@ const CarEditForm = ({ onSubmit ,data }) => {
     validationSchema: Yup.object({
       Name: Yup.string().required('Name is required'),
       Img: Yup.string().url('Must be a valid URL'),
-      Price: Yup.string().required('Price is required'),
+      Price: Yup.number()
+      .required('Price is required')
+      .positive('Price should be a positive number')
+      .integer('Price should be an integer'),
       Model: Yup.string().required('Model is required'),
       Rating: Yup.number().required('Rating is required').min(0).max(5),
       Condition: Yup.string().required('Condition is required'),
@@ -62,7 +65,7 @@ const CarEditForm = ({ onSubmit ,data }) => {
 
   return (
     <form onSubmit={formik.handleSubmit} className="w-full max-w-md  lg:max-w-2xl mx-auto bg-white p-8 rounded-lg md:w-1/2 lg:w-1/2 shadow-lg">
-      <h2 className="text-2xl font-semibold mb-4 text-gray-800  text-center">Edit a Car</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-gray-800  text-center">Update Car Information</h2>
       <div className="grid grid-cols-1 gap-6">
         <div className="mb-4">
           <label htmlFor="Name" className="block text-gray-700   font-bold ">Name</label>
@@ -235,8 +238,8 @@ const CarEditForm = ({ onSubmit ,data }) => {
 
         {/* Submit button */}
         <div className="">
-          <button type="submit" className="w-full bg-red-600 hover:bg-black text-white font-semibold py-2 px-4 rounded-lg">
-            Edit a Car
+          <button type="submit" className="w-full  bg-gray-900 hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg">
+            Update 
           </button>
         </div>
       </div>
