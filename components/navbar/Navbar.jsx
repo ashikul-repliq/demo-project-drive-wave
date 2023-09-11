@@ -97,7 +97,7 @@ const Navbar = () => {
               <li>
                 <button
                   onClick={signOut}
-                  className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-red-700 hover:bg-black "
+                  className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-gray-900 hover:bg-gray-700 "
                 >
                   Sign out
                 </button>
@@ -119,7 +119,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="/sign-up"
-                  className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-red-700 hover:bg-black "
+                  className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-gray-900 hover:bg-gray-700 "
                 >
                   Sign up
                 </Link>
@@ -226,7 +226,7 @@ const Navbar = () => {
                         <li>
                           <button
                             onClick={signOut}
-                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-red-700 hover:bg-black "
+                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-gray-900 hover:bg-gray-700 text-sm "
                           >
                             Sign out
                           </button>
@@ -249,7 +249,7 @@ const Navbar = () => {
                         <li>
                           <Link
                             href="/sign-up"
-                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-red-700 hover:bg-black "
+                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-gray-900 hover:bg-gray-700 text-sm  "
                             onClick={() => setIsMenuOpen(false)}
                           >
                             Sign up
