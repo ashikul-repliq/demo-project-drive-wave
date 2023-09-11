@@ -110,7 +110,7 @@ toast.success('Sign-In Successful!');
 
             <button
               type="submit"
-              className="text-white p-2 rounded-md w-full bg-red-600 hover:bg-black "
+              className="text-white p-2 rounded-md w-full bg-gray-900 hover:bg-gray-700 "
             >
               Sign In
             </button>
@@ -118,7 +118,7 @@ toast.success('Sign-In Successful!');
               Don &apos;t have an account?{" "}
               <Link
                 href="/sign-up"
-                className="text-red-600 underline hover:text-purple-600"
+                className=" underline text-purple-600 hover:text-red-600   "
               >
                 Sign-Up now
               </Link>{" "}

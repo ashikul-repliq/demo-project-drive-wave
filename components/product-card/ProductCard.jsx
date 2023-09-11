@@ -107,7 +107,7 @@ const ProductCard = ({ product, refetch }) => {
         <hr />
 
         <div className="flex justify-between items-center mt-2">
-          <h1 className="text-emerald-400 text-xl font-bold"> {Price}</h1>
+          <h1 className="text-emerald-400 text-xl font-bold"> ${Price}</h1>
 
           <Link
             href={`/inventory/${id}`}
