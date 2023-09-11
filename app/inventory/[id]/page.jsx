@@ -172,12 +172,12 @@ const SingleProductPage = ({ params }) => {
                     }
                 </div>
 
-                <div className="flex items-center mb-4">
+                <div className="flex  items-center mb-4 ">
                   <AiOutlineClockCircle className="text-gray-400 "></AiOutlineClockCircle>
                   <span className="text-gray-600 mx-2 ">
                     ListedOn: {ListedOn || createdAt}
                   </span>
-                  <AiOutlineEye className="text-gray-400 "></AiOutlineEye>
+                  <AiOutlineEye className="text-gray-400 md:ml-4 "></AiOutlineEye>
                   <span className="text-gray-600 ml-2">
                     Views: {Views || "0"}
                   </span>
@@ -213,7 +213,7 @@ const SingleProductPage = ({ params }) => {
                 <h1 className="pb-3 font-bold text-xl md:text-2xl  text-black ">
                   Key Information
                 </h1>
-                <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                   <div className="flex   gap-3">
                     <AiOutlineCar className="text-2xl text-gray-400"></AiOutlineCar>
                     <div>
