@@ -56,7 +56,7 @@ const ProductCard = ({ product, refetch }) => {
       {admin && (
         <div
           onClick={deleteProduct}
-          className="absolute text-4xl text-red-600 hover:text-yellow-300 top-6 right-4 z-50"
+          className="absolute text-4xl text-red-600 hover:text-red-800 top-36 right-4 z-50"
         >
           <MdDelete></MdDelete>
         </div>
