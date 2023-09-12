@@ -226,7 +226,7 @@ const Navbar = () => {
                         <li>
                           <button
                             onClick={signOut}
-                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-gray-900 hover:bg-gray-700 text-sm "
+                            className="inline-flex items-center justify-center  px-4 py-2 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-gray-900 hover:bg-gray-700 text-sm "
                           >
                             Sign out
                           </button>
