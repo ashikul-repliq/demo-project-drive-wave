@@ -139,7 +139,7 @@ const SingleProductPage = ({ params }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
             <div className="col-span-2">
               <div className=" bg-white p-6 rounded-lg shadow-lg col-span-2 mx-5 mt-20 md:ml-20 mb-5 ">
-                <div className="flex justify-between ">
+                <div className="flex items-center justify-between ">
                   <h1 className="pb-2 font-bold text-xl md:text-3xl  text-black ">
                     {Name}{" "}
                   </h1>
@@ -172,15 +172,20 @@ const SingleProductPage = ({ params }) => {
                     }
                 </div>
 
-                <div className="flex  items-center mb-4 ">
-                  <AiOutlineClockCircle className="text-gray-400 "></AiOutlineClockCircle>
-                  <span className="text-gray-600 mx-2 ">
-                    ListedOn: {ListedOn || createdAt}
-                  </span>
-                  <AiOutlineEye className="text-gray-400 md:ml-4 "></AiOutlineEye>
-                  <span className="text-gray-600 ml-2">
-                    Views: {Views || "0"}
-                  </span>
+                <div className="flex flex-col md:flex-row  mb-4 ">
+
+                  <div className="flex items-center">
+                    <AiOutlineClockCircle className="text-gray-400 "></AiOutlineClockCircle>
+                    <span className="text-gray-600 mx-2 ">
+                      ListedOn: {ListedOn || createdAt}
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <AiOutlineEye className="text-gray-400 md:ml-4 "></AiOutlineEye>
+                    <span className="text-gray-600 ml-2">
+                      Views: {Views || "0"}
+                    </span>
+                  </div>
                 </div>
 
                 <div className="relative ">
