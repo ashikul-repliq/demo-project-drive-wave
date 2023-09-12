@@ -20,7 +20,7 @@ const page = () => {
     <div>
       {/* // favorite list */}
 
-      <h1 className=" p-3 text-center text-black font-bold md:text-5xl text-2xl bg-gray-100 ">
+      <h1 className=" p-5 text-center text-black font-bold md:text-5xl text-2xl bg-gray-100 ">
         {" "}
         Favourite list{" "}
       </h1>

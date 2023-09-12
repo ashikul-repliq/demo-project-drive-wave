@@ -71,7 +71,7 @@ const InventoryPage = () => {
 
       {/* product  */}
 
-      <h1 className=" py-3 text-center text-black font-bold md:text-5xl text-2xl bg-gray-100 hidden md:block ">
+      <h1 className=" py-5 text-center text-black font-bold md:text-5xl text-2xl bg-gray-100 hidden md:block ">
         Cars
       </h1>
       {/* filter by  condition and search */}

@@ -49,7 +49,7 @@ const FavouriteCard = ({ product, refetch }) => {
           <div className="flex justify-between mt-3 items-center">
             <h1 className="text-lg font-bold text-emerald-400  md:text-xl">
               {" "}
-              {Price}{" "}
+              ${Price}{" "}
             </h1>
            
             <button
