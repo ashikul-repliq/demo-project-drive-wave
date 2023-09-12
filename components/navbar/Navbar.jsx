@@ -27,9 +27,9 @@ const Navbar = () => {
   const admin = data?.email === "admin@gmail.com";
 
   return (
-    <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
+    <div className="md:py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
       <div className="relative flex items-center justify-between z-30">
-        <div className="flex items-center">
+        <div className="flex items-center p-2">
           <Link href="/" className="inline-flex items-center mr-8">
             <Image
               width={50}
