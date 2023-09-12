@@ -57,7 +57,7 @@ toast.success('Sign-In Successful!');
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-tl-3xl rounded-br-3xl shadow-md w-full md:w-1/2 lg:w-1/3">
+      <div className="bg-white p-8 m-5 rounded-xl  shadow-md w-full md:w-1/2 lg:w-1/3">
         <h2 className="text-2xl font-bold flex items-center justify-center mb-4">
           Sign In
         </h2>

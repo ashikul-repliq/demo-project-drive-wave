@@ -40,7 +40,7 @@ const CarForm = ({ onSubmit }) => {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit} className="w-full max-w-md  lg:max-w-2xl mx-auto bg-white p-8 rounded-lg md:w-1/2 lg:w-1/2 shadow-lg">
+    <form onSubmit={formik.handleSubmit} className="w-full max-w-md  lg:max-w-2xl mx-auto  bg-white p-8 rounded-lg md:w-1/2 lg:w-1/2 shadow-lg">
       <h2 className="text-2xl font-semibold mb-4 text-gray-800  text-center">Add a Car</h2>
       <div className="grid grid-cols-1 gap-6">
         <div className="mb-4">

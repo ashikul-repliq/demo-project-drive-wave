@@ -56,7 +56,7 @@ const EditPage = ({ params }) => {
           </div>
         </div>
       ) : (
-        <div className="mx-auto container  py-20">
+        <div className="mx-auto container px-4 py-20">
           <CarEditForm onSubmit={handleFormSubmit} data={data}></CarEditForm>
         </div>
       )}

@@ -197,6 +197,7 @@ const Navbar = () => {
                     {admin && (
                       <li>
                         <Link
+                        onClick={() => setIsMenuOpen(false)}
                           href="/add-car"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
@@ -249,7 +250,7 @@ const Navbar = () => {
                         <li>
                           <Link
                             href="/sign-up"
-                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-gray-900 hover:bg-gray-700 text-sm  "
+                            className="inline-flex items-center justify-center  px-4 py-2 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md bg-gray-900 hover:bg-gray-700 text-sm  "
                             onClick={() => setIsMenuOpen(false)}
                           >
                             Sign up
