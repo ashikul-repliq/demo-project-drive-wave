@@ -146,7 +146,7 @@ const SingleProductPage = ({ params }) => {
                   {admin ? (
                     <Link
                       href={`/inventory/${id}/edit`}
-                      className="rounded-lg py-2 px-4 mb-2  flex items-center gap-2 md:text-xl text-white bg-slate-600"
+                      className="rounded-lg py-2 px-4 mb-2  flex items-center gap-2 text-sm md:text-xl text-white bg-slate-600"
                     >
                       {" "}
                       Edit <LiaEditSolid></LiaEditSolid>{" "}
