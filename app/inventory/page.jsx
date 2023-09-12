@@ -75,7 +75,7 @@ const InventoryPage = () => {
         Cars
       </h1>
       {/* filter by  condition and search */}
-      <div className="bg-gray-100 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between  w-full container mx-auto pt-6 px-10">
+      <div className="bg-gray-100 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between  w-full container mx-auto pt-6 px-5">
         <div className="p-4  flex flex-col md:flex-row md:gap-2 md:items-center md:justify-center w-full md:max-w-lg ">
           <p className="text-black font-bold md:text-xl mb-2 md:mb-0 ">Search:</p>
           <input
@@ -130,7 +130,7 @@ const InventoryPage = () => {
         </div>
       ) : (
         <div className="bg-gray-100">
-          <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-4  min-h-screen p-10 container mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-4  min-h-screen p-5 container mx-auto">
             {filteredProducts.length ? (
               filteredProducts?.map((product) => (
                 <ProductCard
