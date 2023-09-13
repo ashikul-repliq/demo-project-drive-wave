@@ -106,20 +106,28 @@ const ProductCard = ({ product, refetch }) => {
           <span className="text-gray-400 ml-2"> {Rating}</span>{" "}
           <h1 className="text-gray-400 ml-1">(58.5k Review)</h1>
         </div>
-        <div className="flex items-center my-2">
-          <BiCableCar className="text-gray-400"></BiCableCar>
-          <span className="text-gray-600 mx-2 "> {Transmission}</span>
-          <GiRoad className="text-gray-400"></GiRoad>
-          <span className="text-gray-600 ml-2"> {Mileage}</span>
+        <div className="flex items-center gap-2 my-2">
+          <div className="flex items-center">
+            <BiCableCar className="text-gray-400"></BiCableCar>
+            <span className="text-gray-600 mx-2 "> {Transmission}</span>
+          </div>
+          <div className="flex items-center">
+            <GiRoad className="text-gray-400"></GiRoad>
+            <span className="text-gray-600 ml-2"> {Mileage}</span>
+          </div>
         </div>
-        <div className="flex items-center mt-2 mb-5">
-          <AiFillCar className="text-gray-400"></AiFillCar>
-          <span className="text-gray-600 mx-2 "> Model: {Model}</span>
-          <BsFillFuelPumpFill className="text-gray-400"></BsFillFuelPumpFill>
-          <span className="text-gray-600 ml-2">
-            {" "}
-            {Hybrid === true ? "Hybrid" : "Not Hybrid"}
-          </span>
+        <div className="flex items-center gap-3 mt-2 mb-5">
+          <div className="flex items-center">
+            <AiFillCar className="text-gray-400"></AiFillCar>
+            <span className="text-gray-600 mx-2 "> Model: {Model}</span>
+          </div>
+          <div className="flex items-center">
+            <BsFillFuelPumpFill className="text-gray-400"></BsFillFuelPumpFill>
+            <span className="text-gray-600 ml-2">
+              {" "}
+              {Hybrid === true ? "Hybrid" : "Not Hybrid"}
+            </span>
+          </div>
         </div>
         <hr />
 
