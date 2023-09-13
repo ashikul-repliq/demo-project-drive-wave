@@ -138,8 +138,7 @@ const InventoryPage = () => {
                   product={product}
                   refetch={refetch}
                 >
-                  {" "}
-                  {product.id}{" "}
+                 
                 </ProductCard>
               ))
             ) : (
