@@ -41,9 +41,9 @@ const CarForm = ({ onSubmit }) => {
 
   return (
     <form onSubmit={formik.handleSubmit} className="w-full max-w-md  lg:max-w-2xl mx-auto  bg-white p-8 rounded-lg md:w-1/2 lg:w-1/2 shadow-lg">
-      <h2 className="text-2xl font-semibold mb-4 text-gray-800  text-center">Add a Car</h2>
+      <h2 className="text-2xl font-semibold mb-1 text-gray-800  text-center">Add a Car</h2>
       <div className="grid grid-cols-1 gap-6">
-        <div className="mb-4">
+        <div className="mb-1">
           <label htmlFor="Name" className="block text-gray-700   font-bold ">Name</label>
           <input
             type="text"
@@ -58,7 +58,7 @@ const CarForm = ({ onSubmit }) => {
           )}
         </div>
 
-        <div className="mb-4">
+        <div className="mb-1">
           <label htmlFor="Img" className="block text-gray-700   font-bold">Image URL</label>
           <input
             type="text"
@@ -74,7 +74,7 @@ const CarForm = ({ onSubmit }) => {
         </div>
 
        <div className='flex  gap-4'>
-<div className="mb-4">
+<div className="mb-1">
           <label htmlFor="Price" className="block text-gray-700   font-bold">Price</label>
           <input
             type="text"
@@ -89,7 +89,7 @@ const CarForm = ({ onSubmit }) => {
           )}
         </div>
 
- <div className="mb-4">
+ <div className="mb-1">
           <label htmlFor="Model" className="block text-gray-700   font-bold">Model</label>
           <input
             type="text"
@@ -109,7 +109,7 @@ const CarForm = ({ onSubmit }) => {
 
   <div className='flex gap-4'>
  
- <div className="mb-4">
+ <div className="mb-1">
           <label htmlFor="Rating" className="block text-gray-700   font-bold">Rating</label>
           <input
             type="text"
@@ -124,7 +124,7 @@ const CarForm = ({ onSubmit }) => {
           )}
         </div>
 
- <div className="mb-4">
+ <div className="mb-1">
           <label htmlFor="Condition" className="block text-gray-700   font-bold">Condition</label>
           <input
             type="text"
@@ -143,7 +143,7 @@ const CarForm = ({ onSubmit }) => {
 
    <div className='flex gap-4'>
 
-    <div className="mb-4">
+    <div className="mb-1">
           <label htmlFor="Transmission" className="block text-gray-700   font-bold">Transmission</label>
           <input
             type="text"
@@ -159,7 +159,7 @@ const CarForm = ({ onSubmit }) => {
         </div>
 
 
- <div className="mb-4">
+ <div className="mb-1">
           <label htmlFor="Mileage" className="block text-gray-700   font-bold">Mileage</label>
           <input
             type="text"
@@ -182,7 +182,7 @@ const CarForm = ({ onSubmit }) => {
 
        
 
-        <div className="mb-4">
+        <div className="mb-1">
           <label htmlFor="FuelType" className="block text-gray-700   font-bold">Fuel Type</label>
           <input
             type="text"
@@ -197,7 +197,7 @@ const CarForm = ({ onSubmit }) => {
           )}
         </div>
 
-        <div className="mb-4">
+        <div className="mb-1">
           <label htmlFor="Details" className="block text-gray-700   font-bold">Details</label>
           <textarea
             id="Details"
